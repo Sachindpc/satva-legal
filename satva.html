@@ -1,0 +1,1526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Satva Legal | Premier Legal Solutions</title>
+    <!-- Google Fonts & FontAwesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #0f1e36; /* Deep Navy */
+            --secondary: #c5a880; /* Muted Gold */
+            --text-dark: #2d3748;
+            --text-light: #f7fafc;
+            --bg-light: #f8f9fa;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-color: #ffffff;
+        }
+
+        h1, h2, h3, .brand-logo {
+            font-family: 'Cinzel', serif;
+        }
+
+        /* Navigation */
+        header {
+            background-color: var(--primary);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.2rem 2rem;
+        }
+
+        .brand-logo {
+            color: var(--secondary);
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-decoration: none;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+
+        .menu-toggle {
+            display: none;
+            color: var(--text-light);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(15, 30, 54, 0.85), rgba(15, 30, 54, 0.85)), 
+                        url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--text-light);
+            padding: 0 1rem;
+            margin-top: 60px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            letter-spacing: 3px;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem auto;
+            color: #cbd5e0;
+            animation: fadeInUp 1.2s ease;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 1px;
+            border-radius: 4px;
+            transition: var(--transition);
+        }
+
+        .btn-primary {
+            background-color: var(--secondary);
+            color: var(--primary);
+            border: 2px solid var(--secondary);
+        }
+
+        .btn-primary:hover {
+            background-color: transparent;
+            color: var(--secondary);
+        }
+
+        /* About Section */
+        .section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            position: relative;
+            color: var(--primary);
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--secondary);
+            margin: 0.5rem auto 0 auto;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            color: #4a5568;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .stat-box {
+            background-color: var(--bg-light);
+            padding: 2rem;
+            text-align: center;
+            border-left: 4px solid var(--secondary);
+            border-radius: 4px;
+        }
+
+        .stat-box h3 {
+            font-size: 2rem;
+            color: var(--primary);
+        }
+
+        /* Practice Areas */
+        .bg-grey {
+            background-color: var(--bg-light);
+            width: 100vw;
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            padding: 2rem 0;
+        }
+
+        .service-card {
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 6px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: var(--transition);
+            border-top: 3px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-top: 3px solid var(--secondary);
+            box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        }
+
+        .service-card i {
+            font-size: 2rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .service-card p {
+            font-size: 0.9rem;
+            color: #718096;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info h3 {
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-item i {
+            color: var(--secondary);
+            font-size: 1.2rem;
+        }
+
+        .contact-form {
+            background: #ffffff;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-radius: 8px;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #cbd5e0;
+            border-radius: 4px;
+            font-family: inherit;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(15, 30, 54, 0.1);
+        }
+
+        button.btn {
+            width: 100%;
+            cursor: pointer;
+            border: none;
+            background-color: var(--primary);
+            color: var(--text-light);
+        }
+
+        button.btn:hover {
+            background-color: var(--secondary);
+            color: var(--primary);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: var(--text-light);
+            padding: 3rem 2rem 1rem 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #2d3748;
+            padding-bottom: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .social-icons a {
+            color: var(--text-light);
+            margin-left: 1.5rem;
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+
+        .social-icons a:hover {
+            color: var(--secondary);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        .process-section{
+    background:#ffffff;
+    padding:100px 20px;
+    overflow:hidden;
+}
+
+.process-heading{
+    max-width:850px;
+    margin:auto;
+    text-align:center;
+    margin-bottom:80px;
+}
+
+.process-heading span{
+    color:var(--secondary);
+    letter-spacing:3px;
+    font-size:.9rem;
+    font-weight:600;
+}
+
+.process-heading h2{
+    color:var(--primary);
+    font-size:2.8rem;
+    margin:15px 0;
+}
+
+.process-heading p{
+    color:#6b7280;
+    line-height:1.8;
+    font-size:1.05rem;
+}
+
+/* Timeline */
+
+.process-timeline{
+
+    position:relative;
+
+    max-width:1100px;
+
+    margin:auto;
+
+    padding:40px 0;
+
+}
+
+.timeline-line{
+
+    position:absolute;
+
+    left:50%;
+
+    top:0;
+
+    transform:translateX(-50%);
+
+    width:4px;
+
+    height:100%;
+
+    background:#ececec;
+
+    border-radius:50px;
+
+}
+
+.timeline-line::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:0%;
+
+    background:linear-gradient(var(--secondary),#e8c98f);
+
+    transition:1s;
+
+}
+
+/* Cards */
+
+.process-card{
+
+    position:relative;
+
+    width:50%;
+
+    padding:20px 50px;
+
+    margin-bottom:70px;
+
+    opacity:0;
+
+    transition:1s;
+
+}
+
+.process-card.left{
+
+    left:0;
+
+    transform:translateX(-80px);
+
+}
+
+.process-card.right{
+
+    left:50%;
+
+    transform:translateX(80px);
+
+}
+
+/* Reveal */
+
+.process-card.show{
+
+    opacity:1;
+
+    transform:translateX(0);
+
+}
+
+/* Number */
+
+.process-number{
+
+    position:absolute;
+
+    top:35px;
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:50%;
+
+    background:var(--secondary);
+
+    color:var(--primary);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-weight:bold;
+
+    font-size:22px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+
+    z-index:5;
+
+}
+
+.left .process-number{
+
+    right:-35px;
+
+}
+
+.right .process-number{
+
+    left:-35px;
+
+}
+
+/* Card */
+
+.process-content{
+
+    background:#fff;
+
+    border-radius:12px;
+
+    padding:35px;
+
+    border:1px solid #ececec;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.06);
+
+    transition:.4s;
+
+}
+
+.process-content:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 25px 60px rgba(0,0,0,.12);
+
+    border-color:var(--secondary);
+
+}
+
+/* Icon */
+
+.process-icon{
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:50%;
+
+    background:rgba(197,168,128,.15);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin-bottom:20px;
+
+    transition:.4s;
+
+}
+
+.process-icon i{
+
+    font-size:28px;
+
+    color:var(--secondary);
+
+}
+
+.process-content:hover .process-icon{
+
+    background:var(--primary);
+
+    transform:rotate(8deg);
+
+}
+
+.process-content:hover .process-icon i{
+
+    color:#fff;
+
+}
+
+.process-content h3{
+
+    color:var(--primary);
+
+    margin-bottom:15px;
+
+    font-size:1.35rem;
+
+}
+
+.process-content p{
+
+    color:#666;
+
+    line-height:1.8;
+
+}
+
+/* Decorative circles */
+
+.process-content::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:140px;
+
+    height:140px;
+
+    border-radius:50%;
+
+    background:rgba(197,168,128,.05);
+
+    top:-50px;
+
+    right:-50px;
+
+    z-index:0;
+
+}
+
+/* Responsive */
+
+@media(max-width:900px){
+
+.timeline-line{
+
+left:30px;
+
+}
+
+.process-card{
+
+width:100%;
+
+left:0!important;
+
+padding-left:90px;
+
+padding-right:20px;
+
+margin-bottom:50px;
+
+}
+
+.left .process-number,
+
+.right .process-number{
+
+left:-5px;
+
+right:auto;
+
+}
+
+.process-heading h2{
+
+font-size:2.2rem;
+
+}
+
+}
+        @media (max-width: 968px) {
+            .about-grid, .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--primary);
+                padding: 2rem;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+                text-align: center;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            
+            .social-icons a {
+                margin: 0 0.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header>
+        <nav class="navbar">
+            <a href="#" class="brand-logo">SATVA LEGAL</a>
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Practice Areas</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+<section class="hero" id="home">
+    <div class="hero-content">
+
+        <span style="color:#c5a880;letter-spacing:3px;font-size:15px;">
+            TRUST • INTEGRITY • JUSTICE
+        </span>
+
+        <h1>Excellence. Integrity. Results.</h1>
+
+        <p>
+            Satva Legal provides comprehensive legal solutions for individuals,
+            businesses, and institutions. We combine strategic legal expertise,
+            ethical advocacy, and practical solutions to protect what matters most.
+        </p>
+
+        <div style="margin-top:30px;">
+            <a href="#contact" class="btn btn-primary">
+                Schedule Consultation
+            </a>
+
+            <a href="#services"
+               class="btn"
+               style="margin-left:15px;border:2px solid #c5a880;color:#c5a880;">
+                Explore Services
+            </a>
+        </div>
+
+        <div style="display:flex;
+                    justify-content:center;
+                    gap:35px;
+                    flex-wrap:wrap;
+                    margin-top:60px;">
+
+            <div>
+                <h2 style="color:#c5a880;font-size:38px;">25+</h2>
+                <p>Practice Areas</p>
+            </div>
+
+            <div>
+                <h2 style="color:#c5a880;font-size:38px;">98%</h2>
+                <p>Client Satisfaction</p>
+            </div>
+
+            <div>
+                <h2 style="color:#c5a880;font-size:38px;">100%</h2>
+                <p>Confidential</p>
+            </div>
+
+            <div>
+                <h2 style="color:#c5a880;font-size:38px;">24/7</h2>
+                <p>Legal Support</p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <h2 class="section-title">About Our Firm</h2>
+        <div class="about-grid">
+            <div class="about-text">
+                <p><strong>Satva Legal</strong> is a full-service law firm committed to providing practical legal advice and strong representation across a wide range of practice areas. Inspired by the principle of Satva—truth, integrity, and fairness, we uphold the highest standards of professional ethics in every matter we undertake.
+
+Whether representing individuals, businesses, or institutions, we approach each case with careful preparation, sound legal reasoning, and a clear understanding of our clients' objectives. We believe every client deserves direct access to experienced lawyers, honest advice, and dedicated representation.</p>
+            </div>
+            <div class="about-stats">
+                <div class="stat-box">
+                    <h3>25+</h3>
+                    <p>Practice Niches</p>
+                </div>
+                <div class="stat-box">
+                    <h3>98%</h3>
+                    <p>Client Satisfaction</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ================= OUR PROCESS SECTION ================= -->
+
+<section class="section process-section" id="process">
+    <div class="process-heading">
+        <span>OUR APPROACH</span>
+        <h2>Our Legal Process</h2>
+        <p>
+            Every legal matter deserves a structured approach. From the first
+            consultation to the successful resolution of your case, we keep you
+            informed, prepared, and represented at every stage.
+        </p>
+    </div>
+
+    
+
+    <div class="process-timeline">
+
+        <div class="timeline-line"></div>
+
+        <!-- STEP 1 -->
+        <div class="process-card left reveal">
+
+            <div class="process-number">
+                01
+            </div>
+
+            <div class="process-content">
+
+                <div class="process-icon">
+                    <i class="fas fa-comments"></i>
+                </div>
+
+                <h3>Initial Consultation</h3>
+
+                <p>
+                    We begin by understanding your legal concerns,
+                    reviewing available documents, identifying risks,
+                    and discussing the objectives you wish to achieve.
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- STEP 2 -->
+
+        <div class="process-card right reveal">
+
+            <div class="process-number">
+                02
+            </div>
+
+            <div class="process-content">
+
+                <div class="process-icon">
+                    <i class="fas fa-file-signature"></i>
+                </div>
+
+                <h3>Case Evaluation</h3>
+
+                <p>
+                    Our legal team conducts detailed legal research,
+                    examines evidence, evaluates applicable laws,
+                    and determines the most effective course of action.
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- STEP 3 -->
+
+        <div class="process-card left reveal">
+
+            <div class="process-number">
+                03
+            </div>
+
+            <div class="process-content">
+
+                <div class="process-icon">
+                    <i class="fas fa-scale-balanced"></i>
+                </div>
+
+                <h3>Legal Strategy</h3>
+
+                <p>
+                    A personalized legal strategy is developed,
+                    outlining procedural steps, timelines,
+                    possible outcomes, and practical solutions
+                    tailored to your matter.
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- STEP 4 -->
+
+        <div class="process-card right reveal">
+
+            <div class="process-number">
+                04
+            </div>
+
+            <div class="process-content">
+
+                <div class="process-icon">
+                    <i class="fas fa-gavel"></i>
+                </div>
+
+                <h3>Representation & Resolution</h3>
+
+                <p>
+                    Whether through negotiation, mediation,
+                    litigation, or legal documentation,
+                    we work diligently to protect your interests
+                    until your matter reaches its conclusion.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= END OUR PROCESS ================= -->
+    <!-- Why Choose Us Section -->
+    <section class="section" id="why-choose-us">
+        <h2 class="section-title">Why Choose Satva Legal</h2>
+        
+        <style>
+.features-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:2rem;
+    margin-top:1rem;
+    perspective:1000px;
+}
+
+.feature-box{
+    position:relative;
+    text-align:center;
+    padding:2.5rem 1.5rem;
+    background:#fff;
+    border:1px solid #e2e8f0;
+    border-radius:10px;
+    overflow:hidden;
+    transition:0.45s ease;
+    transform-style:preserve-3d;
+
+    /* Scroll Animation */
+    opacity:0;
+    transform:translateY(80px) scale(.9);
+}
+
+/* Animated border */
+.feature-box::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    border-radius:10px;
+    padding:2px;
+    background:linear-gradient(
+        135deg,
+        transparent,
+        #c5a880,
+        transparent
+    );
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite:xor;
+    mask-composite:exclude;
+
+    opacity:0;
+    transition:.4s;
+}
+
+.feature-box:hover::before{
+    opacity:1;
+}
+
+.feature-box:hover{
+    transform:
+        translateY(-12px)
+        rotateX(6deg)
+        rotateY(-6deg);
+
+    box-shadow:
+        0 25px 45px rgba(0,0,0,.12);
+}
+
+.feature-icon-wrapper{
+    width:72px;
+    height:72px;
+    margin:auto;
+    margin-bottom:1.5rem;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#f8fafc;
+    transition:.4s;
+}
+
+.feature-icon-wrapper i{
+    font-size:1.8rem;
+    color:var(--primary);
+    transition:.4s;
+
+    animation:floatIcon 3s ease-in-out infinite;
+}
+
+.feature-box:hover .feature-icon-wrapper{
+    background:var(--primary);
+    transform:rotate(360deg) scale(1.08);
+}
+
+.feature-box:hover .feature-icon-wrapper i{
+    color:var(--secondary);
+}
+
+.feature-box h3{
+    color:var(--primary);
+    font-size:1.3rem;
+    margin-bottom:.8rem;
+}
+
+.feature-box p{
+    color:#555;
+    line-height:1.6;
+}
+
+/* Scroll Active */
+
+.feature-box.show{
+    animation:cardReveal .8s forwards;
+}
+
+/* Different delays */
+
+.feature-box:nth-child(1){
+    animation-delay:.1s;
+}
+.feature-box:nth-child(2){
+    animation-delay:.25s;
+}
+.feature-box:nth-child(3){
+    animation-delay:.4s;
+}
+.feature-box:nth-child(4){
+    animation-delay:.55s;
+}
+
+@keyframes cardReveal{
+
+    0%{
+        opacity:0;
+        transform:
+            translateY(70px)
+            scale(.85)
+            rotateX(20deg);
+    }
+
+    60%{
+        opacity:1;
+        transform:
+            translateY(-10px)
+            scale(1.03);
+    }
+
+    100%{
+        opacity:1;
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+}
+
+@keyframes floatIcon{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-8px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+
+}
+</style>
+
+        <div class="features-grid">
+            <!-- Core Value 1: Satva / Integrity -->
+            <div class="feature-box">
+                <div class="feature-icon-wrapper">
+                    <i class="fas fa-scale-balanced"></i>
+                </div>
+                <h3>Uncompromising Satva</h3>
+                <p>Rooted in absolute truth and ethics. We deliver honest legal diagnostic assessments, building strategies strictly on merit and long-term security.</p>
+            </div>
+
+            <!-- Core Value 2: Response Time -->
+            <div class="feature-box">
+                <div class="feature-icon-wrapper">
+                    <i class="fas fa-bolt-lightning"></i>
+                </div>
+                <h3>Rapid Response Time</h3>
+                <p>Legal crises don't wait. Our agile practice structure ensures lightning-fast communications, direct accessibility, and proactive risk mitigation.</p>
+            </div>
+
+            <!-- Core Value 3: Tech-Driven Research -->
+            <div class="feature-box">
+                <div class="feature-icon-wrapper">
+                    <i class="fas fa-microchip"></i>
+                </div>
+                <h3>Tech-Driven Research</h3>
+                <p>Leveraging state-of-the-art database modeling and modern research engines to discover critical procedural advantages others simply miss.</p>
+            </div>
+
+            <!-- Core Value 4: Transparent Fee Structure -->
+            <div class="feature-box">
+                <div class="feature-icon-wrapper">
+                    <i class="fas fa-receipt"></i>
+                </div>
+                <h3>Transparent Billing</h3>
+                <p>No hidden variables or surprise retainers. We provide upfront clarity on administrative disbursements, fixed caps, and flexible engagement milestones.</p>
+            </div>
+        </div>
+        <script>
+
+document.addEventListener("DOMContentLoaded",()=>{
+
+const cards=document.querySelectorAll(".feature-box");
+
+const observer=new IntersectionObserver((entries)=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("show");
+
+}
+
+});
+
+},{
+threshold:.25
+});
+
+cards.forEach(card=>{
+
+observer.observe(card);
+
+/* 3D Mouse Tilt */
+
+card.addEventListener("mousemove",(e)=>{
+
+const rect=card.getBoundingClientRect();
+
+const x=e.clientX-rect.left;
+const y=e.clientY-rect.top;
+
+const rotateY=(x-rect.width/2)/18;
+const rotateX=(rect.height/2-y)/18;
+
+card.style.transform=
+`
+perspective(1000px)
+rotateX(${rotateX}deg)
+rotateY(${rotateY}deg)
+translateY(-10px)
+`;
+
+});
+
+card.addEventListener("mouseleave",()=>{
+
+card.style.transform="";
+
+});
+
+});
+
+});
+
+</script>
+    </section>
+
+    <!-- Practice Areas / Services Section -->
+    <div class="bg-grey">
+        <section class="section" id="services">
+            <h2 class="section-title">Core Practice Areas</h2>
+            <div class="services-grid">
+                
+                <div class="service-card">
+                    <i class="fas fa-gavel"></i>
+                    <h3>Civil Law</h3>
+                    <p>Dispute resolution, breach of contract, tort claims, and property liability litigation.</p>
+                </div>
+
+                <div class="service-card">
+                    <i class="fa-solid fa-handcuffs"></i>
+                    <h3>Criminal Law</h3>
+                    <p>White-collar defense, appellate representation, and robust protection of constitutional rights.</p>
+                </div>
+
+                <div class="service-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Family Law</h3>
+                    <p>Matrimonial disputes, asset division, child custody, and estate administration structures.</p>
+                </div>
+
+                <div class="service-card">
+                    <i class="fas fa-briefcase"></i>
+                    <h3>Corporate & Business Law</h3>
+                    <p>Mergers & acquisitions, corporate governance, cross-border investments, and restructuring.</p>
+                </div>
+
+                <div class="service-card">
+                    <i class="fas fa-user-tie"></i>
+                    <h3>Employment & Labour</h3>
+                    <p>Workplace regulatory advisory, compliance audits, and collective bargaining navigation.</p>
+                </div>
+
+                <div class="service-card">
+                    <i class="fas fa-building"></i>
+                    <h3>Property & Real Estate</h3>
+                    <p>Zoning compliance, commercial leases, land acquisitions, and titles review.</p>
+                </div>
+
+                <div class="service-card">
+                    <i class="fas fa-file-signature"></i>
+                    <h3>Contract Law</h3>
+                    <p>Strategic drafting, stringent risk-mitigation audits, and transactional negotiation execution.</p>
+                </div>
+
+                <div class="service-card">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Intellectual Property Law</h3>
+                    <p>Patent procurement, copyright protections, trademark portfolios, and trade secret asset litigation.</p>
+                </div>
+
+                <div class="service-card">
+                    <i class="fas fa-calculator"></i>
+                    <h3>Tax Law</h3>
+                    <p>Corporate tax structuring, cross-border operations strategy, and administrative dispute representation.</p>
+                </div>
+
+                <div class="service-card">
+                    <i class="fas fa-landmark"></i>
+                    <h3>Banking & Finance Law</h3>
+                    <p>Structured finance, debt restructurings, regulatory compliances, and capital market transactions.</p>
+                </div>
+
+                <div class="service-card">
+                    <i class="fas fa-laptop-code"></i>
+                    <h3>Cyber & Technology Law</h3>
+                    <p>Data privacy architecture, e-commerce parameters, and proactive cybersecurity liability mitigations.</p>
+                </div>
+
+                <div class="service-card">
+                    <i class="fas fa-shopping-cart"></i>
+                    <h3>Consumer Protection</h3>
+                    <p>Class action lawsuits, product liability defense, and compliance standards evaluation.</p>
+                </div>
+
+                <div class="service-card">
+                    <i class="fas fa-passport"></i>
+                    <h3>Immigration Law</h3>
+                    <p>Corporate mobility, skilled visa expediting, and citizenship advisory protocols.</p>
+                </div>
+
+                <div class="service-card">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <h3>Insurance Law</h3>
+                    <p>Complex claim litigation, coverage assessments, and regulatory frameworks strategy.</p>
+                </div>
+
+                <div class="service-card">
+                    <i class="fas fa-seedling"></i>
+                    <h3>Environmental Law</h3>
+                    <p>ESG reporting frameworks, cleantech compliance, and environmental liability advocacy.</p>
+                </div>
+
+                <div class="service-card">
+                    <i class="fas fa-balance-scale"></i>
+                    <h3>Constitutional Law</h3>
+                    <p>Writs filings, fundamental civil liberties advocacy, and statutory interpretation challenges.</p>
+                </div>
+
+                <div class="service-card">
+                    <i class="fas fa-university"></i>
+                    <h3>Administrative Law</h3>
+                    <p>Challenging regulatory agency mandates, licensing panels representations, and appeals.</p>
+                </div>
+
+                <div class="service-card">
+                    <i class="fas fa-handshake"></i>
+                    <h3>Arbitration & Mediation</h3>
+                    <p>Alternative Dispute Resolutions (ADR) aimed at optimal non-litigious results.</p>
+                </div>
+
+                <div class="service-card">
+                    <i class="fas fa-globe"></i>
+                    <h3>International Law</h3>
+                    <p>Sovereign matters, jurisdictional enforcement, and global trade treaties handling.</p>
+                </div>
+
+                <div class="service-card">
+                    <i class="fas fa-hand-holding-heart"></i>
+                    <h3>Human Rights Law</h3>
+                    <p>Public interest litigations, institutional reform efforts, and civil liberties protection.</p>
+                </div>
+
+                <div class="service-card">
+                    <i class="fas fa-heartbeat"></i>
+                    <h3>Healthcare & Medical Law</h3>
+                    <p>Malpractice risk management, bio-tech regulations, and institutional operational ethics.</p>
+                </div>
+
+                <div class="service-card">
+                    <i class="fas fa-ship"></i>
+                    <h3>Maritime & Aviation</h3>
+                    <p>Logistics liabilities, international freight disputes, and transport compliance laws.</p>
+                </div>
+
+                <div class="service-card">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Education Law</h3>
+                    <p>Institutional policies structuring, academic boards governance, and student rights.</p>
+                </div>
+
+                <div class="service-card">
+                    <i class="fas fa-rocket"></i>
+                    <h3>Startup & Compliance</h3>
+                    <p>Venture structures, cap table advice, safe agreement mechanics, and foundational licensing.</p>
+                </div>
+
+                <div class="service-card">
+                    <i class="fas fa-file-alt"></i>
+                    <h3>Legal Documentation</h3>
+                    <p>Precision execution of deeds, indemnities, power of attorney mandates, and vital filings.</p>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <h2 class="section-title">Connect With Us</h2>
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h3>Let's Discuss Your Case</h3>
+                <p style="margin-bottom: 2rem; color: #4a5568;">Reach out to arrange a confidential diagnostic evaluation with our specialized attorneys.</p>
+                
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Satva Legal,<br>Vasam Ground Floor,<br>Balussery, Kozhikode,<br>Kerala, India, PIN - 673613</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>+91 81477 24990</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>contact@satvalegal.com</span>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <form id="legalForm" onsubmit="handleSubmit(event)">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="practice">Select Practice Area</label>
+                        <select id="practice" class="form-control">
+                            <option>Corporate & Business Law</option>
+                            <option>Civil / Criminal Litigation</option>
+                            <option>Property & Real Estate</option>
+                            <option>Intellectual Property</option>
+                            <option>Other Legal Assistance</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Brief Case Overview</label>
+                        <textarea id="message" rows="4" class="form-control" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Submit Request</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="brand-logo" style="font-size: 1.5rem;">SATVA LEGAL</div>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+            </div>
+        </div>
+        <p style="font-size: 0.85rem; color: #a0aec0;">&copy; 2026 Satva Legal. All Rights Reserved. Attorney Advertising.</p>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu and Form Submission -->
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when a link is clicked
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        function handleSubmit(e) {
+            e.preventDefault();
+            alert('Thank you for contacting Satva Legal. A representative will review your inquiry details shortly.');
+            document.getElementById('legalForm').reset();
+        }
+        /* ==========================================================
+   OUR PROCESS SCROLL ANIMATION
+========================================================== */
+
+const processCards = document.querySelectorAll(".process-card");
+const timeline = document.querySelector(".timeline-line");
+
+function revealProcessCards() {
+
+    const trigger = window.innerHeight * 0.85;
+
+    processCards.forEach((card) => {
+
+        const top = card.getBoundingClientRect().top;
+
+        if (top < trigger) {
+            card.classList.add("show");
+        }
+
+    });
+
+    // Animate timeline fill
+
+    if (timeline) {
+
+        const rect = timeline.getBoundingClientRect();
+
+        const windowHeight = window.innerHeight;
+
+        let progress = ((windowHeight - rect.top) / (rect.height + windowHeight)) * 100;
+
+        progress = Math.max(0, Math.min(progress, 100));
+
+        timeline.style.setProperty("--progress", progress + "%");
+
+    }
+
+}
+
+window.addEventListener("scroll", revealProcessCards);
+
+window.addEventListener("load", revealProcessCards);
+
+revealProcessCards();
+    </script>
+</body>
+</html>
