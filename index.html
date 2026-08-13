@@ -733,6 +733,426 @@ font-size:2.2rem;
                 margin: 0 0.75rem;
             }
         }
+        /* =========================================================
+   MOBILE OPTIMIZATION
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    /* ---------- GLOBAL ---------- */
+
+    html {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    body {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    .section {
+        width: 100%;
+        max-width: 100%;
+        padding: 4rem 1.2rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+        line-height: 1.25;
+        margin-bottom: 2rem;
+    }
+
+
+    /* ---------- NAVBAR ---------- */
+
+    .navbar {
+        padding: 1rem 1.2rem;
+    }
+
+    .brand-logo {
+        font-size: 1.35rem;
+        letter-spacing: 1.5px;
+    }
+
+    .menu-toggle {
+        font-size: 1.4rem;
+    }
+
+    .nav-links {
+        padding: 1.5rem 1rem;
+        gap: 1.2rem;
+    }
+
+    .nav-links a {
+        font-size: 0.9rem;
+    }
+
+
+    /* ---------- HERO ---------- */
+
+    .hero {
+        min-height: 100svh;
+        height: auto;
+        padding: 110px 1.2rem 50px;
+        margin-top: 0;
+    }
+
+    .hero-content {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .hero-content > span {
+        font-size: 11px !important;
+        letter-spacing: 2px !important;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(2rem, 9vw, 2.5rem);
+        line-height: 1.2;
+        letter-spacing: 1px;
+        margin: 1rem 0;
+    }
+
+    .hero-content p {
+        font-size: 0.95rem;
+        line-height: 1.7;
+        max-width: 100%;
+        margin-bottom: 1.5rem;
+    }
+
+    /* Hero buttons */
+    .hero-content > div {
+        margin-top: 20px !important;
+    }
+
+    .hero-content .btn {
+        display: block;
+        width: 100%;
+        max-width: 300px;
+        margin: 10px auto !important;
+        padding: 0.8rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    /* Hero statistics */
+    .hero-content > div:last-child {
+        gap: 20px !important;
+        margin-top: 35px !important;
+    }
+
+    .hero-content > div:last-child > div {
+        width: calc(50% - 20px);
+    }
+
+    .hero-content > div:last-child h2 {
+        font-size: 28px !important;
+    }
+
+    .hero-content > div:last-child p {
+        font-size: 0.8rem;
+    }
+
+
+    /* ---------- ABOUT ---------- */
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .about-text p {
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+
+    .about-stats {
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+
+    .stat-box {
+        padding: 1.3rem 0.8rem;
+    }
+
+    .stat-box h3 {
+        font-size: 1.6rem;
+    }
+
+    .stat-box p {
+        font-size: 0.8rem;
+    }
+
+
+    /* =====================================================
+       OUR PROCESS
+       ===================================================== */
+
+    .process-section {
+        padding: 70px 15px;
+    }
+
+    .process-heading {
+        margin-bottom: 40px;
+        padding: 0 5px;
+    }
+
+    .process-heading span {
+        font-size: 0.75rem;
+        letter-spacing: 2px;
+    }
+
+    .process-heading h2 {
+        font-size: 2rem;
+        line-height: 1.25;
+    }
+
+    .process-heading p {
+        font-size: 0.9rem;
+        line-height: 1.7;
+    }
+
+    .process-timeline {
+        width: 100%;
+        padding: 20px 0;
+    }
+
+    /* Move timeline to the left */
+    .timeline-line {
+        left: 25px;
+        width: 3px;
+    }
+
+    .process-card,
+    .process-card.left,
+    .process-card.right {
+        width: 100%;
+        left: 0 !important;
+        padding: 10px 5px 10px 65px;
+        margin-bottom: 35px;
+        box-sizing: border-box;
+    }
+
+    /* Keep all numbers on the left */
+    .left .process-number,
+    .right .process-number {
+        left: -10px;
+        right: auto;
+        top: 25px;
+        width: 50px;
+        height: 50px;
+        font-size: 16px;
+    }
+
+    .process-content {
+        width: 100%;
+        padding: 25px 20px;
+        box-sizing: border-box;
+    }
+
+    .process-content h3 {
+        font-size: 1.1rem;
+        line-height: 1.4;
+        margin-bottom: 10px;
+    }
+
+    .process-content p {
+        font-size: 0.9rem;
+        line-height: 1.7;
+    }
+
+    .process-icon {
+        width: 55px;
+        height: 55px;
+        margin-bottom: 15px;
+    }
+
+    .process-icon i {
+        font-size: 22px;
+    }
+
+
+    /* ---------- WHY CHOOSE US ---------- */
+
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .feature-box {
+        padding: 2rem 1.2rem;
+    }
+
+    .feature-box h3 {
+        font-size: 1.15rem;
+    }
+
+    .feature-box p {
+        font-size: 0.9rem;
+    }
+
+    /* Disable 3D hover effects on mobile */
+    .feature-box:hover {
+        transform: none;
+        box-shadow: 0 10px 25px rgba(0,0,0,.08);
+    }
+
+    .feature-box:hover .feature-icon-wrapper {
+        transform: none;
+    }
+
+
+    /* ---------- SERVICES ---------- */
+
+    .bg-grey {
+        width: 100%;
+        left: 0;
+        right: 0;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 1rem 0;
+    }
+
+    .service-card {
+        padding: 1.5rem;
+    }
+
+    .service-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .service-card p {
+        font-size: 0.88rem;
+        line-height: 1.6;
+    }
+
+
+    /* ---------- CONTACT ---------- */
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .contact-info h3 {
+        font-size: 1.4rem;
+    }
+
+    .contact-info p {
+        font-size: 0.9rem;
+    }
+
+    .info-item {
+        align-items: flex-start;
+        gap: 0.8rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .info-item i {
+        flex-shrink: 0;
+        margin-top: 4px;
+    }
+
+    .info-item span {
+        font-size: 0.9rem;
+        word-break: break-word;
+    }
+
+    .contact-form {
+        padding: 1.5rem;
+    }
+
+    .form-control {
+        font-size: 16px;
+    }
+
+
+    /* ---------- FOOTER ---------- */
+
+    footer {
+        padding: 2.5rem 1.2rem 1rem;
+    }
+
+    .footer-content {
+        text-align: center;
+    }
+
+    .social-icons {
+        display: flex;
+        justify-content: center;
+        gap: 1.2rem;
+    }
+
+    .social-icons a {
+        margin: 0 !important;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .section {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .hero {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .hero-content h1 {
+        font-size: 1.85rem;
+    }
+
+    .hero-content p {
+        font-size: 0.88rem;
+    }
+
+    .hero-content > div:last-child {
+        gap: 10px !important;
+    }
+
+    .hero-content > div:last-child > div {
+        width: calc(50% - 10px);
+    }
+
+    .process-card,
+    .process-card.left,
+    .process-card.right {
+        padding-left: 58px;
+        padding-right: 0;
+    }
+
+    .process-content {
+        padding: 20px 15px;
+    }
+
+    .process-number {
+        width: 45px !important;
+        height: 45px !important;
+        font-size: 14px !important;
+    }
+
+    .feature-box {
+        padding: 1.7rem 1rem;
+    }
+
+    .contact-form {
+        padding: 1.2rem;
+    }
+}
     </style>
 </head>
 <body>
