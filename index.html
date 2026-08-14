@@ -57,12 +57,25 @@
         }
 
         .brand-logo {
-            color: var(--secondary);
-            font-size: 1.8rem;
-            font-weight: 700;
-            text-decoration: none;
-            letter-spacing: 2px;
-        }
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    color: var(--secondary);
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+
+.brand-logo img {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #ffffff;
+    display: block;
+}
 
         .nav-links {
             display: flex;
@@ -1272,7 +1285,10 @@ REDUCED MOTION
     <!-- Header & Navigation -->
     <header>
         <nav class="navbar">
-            <a href="#" class="brand-logo hero-from-right">SATVA LEGAL</a>
+            <a href="#" class="brand-logo hero-from-right">
+            <img src="satva-logo.png" alt="Satva Legal Logo">
+            <span>SATVA LEGAL</span>
+        </a>
             <div class="menu-toggle" id="mobile-menu">
                 <i class="fas fa-bars"></i>
             </div>
