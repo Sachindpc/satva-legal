@@ -104,19 +104,14 @@
             margin-top: 60px;
         }
 
-        .hero-content h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            letter-spacing: 3px;
-            animation: fadeInUp 1s ease;
-        }
+        
 
         .hero-content p {
             font-size: 1.2rem;
             max-width: 700px;
             margin: 0 auto 2rem auto;
             color: #cbd5e0;
-            animation: fadeInUp 1.2s ease;
+            
         }
 
         .btn {
@@ -1153,6 +1148,123 @@ font-size:2.2rem;
         padding: 1.2rem;
     }
 }
+/* =========================================
+SATVA LEGAL - SMOOTH HOME ANIMATIONS
+========================================= */
+
+/* Common setup */
+.hero-from-right,
+.hero-from-left,
+.hero-stat {
+    opacity: 0;
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+
+/* =========================================
+TRUST • INTEGRITY • JUSTICE
+LEFT → RIGHT
+========================================= */
+
+.hero-from-right {
+    transform: translate3d(-55px, 0, 0);
+    filter: blur(3px);
+}
+
+.hero-from-right.animate {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    filter: blur(0);
+
+    transition:
+        transform 1s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 0.8s ease-out,
+        filter 0.8s ease-out;
+}
+
+
+/* =========================================
+EXCELLENCE. INTEGRITY. RESULTS.
+RIGHT → LEFT
+========================================= */
+
+.hero-from-left {
+    transform: translate3d(55px, 0, 0);
+    filter: blur(3px);
+}
+
+.hero-from-left.animate {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    filter: blur(0);
+
+    transition:
+        transform 1s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 0.8s ease-out,
+        filter 0.8s ease-out;
+}
+
+
+/* =========================================
+STATISTICS
+BOTTOM → UP
+========================================= */
+
+.hero-stat {
+    transform: translate3d(0, 45px, 0);
+    filter: blur(3px);
+}
+
+.hero-stat.animate {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    filter: blur(0);
+
+    transition:
+        transform 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 0.7s ease-out,
+        filter 0.7s ease-out;
+}
+
+
+/* =========================================
+STAGGER STATISTICS
+========================================= */
+
+.hero-stat:nth-child(1).animate {
+    transition-delay: 0s;
+}
+
+.hero-stat:nth-child(2).animate {
+    transition-delay: 0.12s;
+}
+
+.hero-stat:nth-child(3).animate {
+    transition-delay: 0.24s;
+}
+
+.hero-stat:nth-child(4).animate {
+    transition-delay: 0.36s;
+}
+
+
+/* =========================================
+REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .hero-from-right,
+    .hero-from-left,
+    .hero-stat {
+        opacity: 1;
+        transform: none;
+        filter: none;
+        transition: none !important;
+    }
+}
     </style>
 </head>
 <body>
@@ -1177,16 +1289,20 @@ font-size:2.2rem;
 <section class="hero" id="home">
     <div class="hero-content">
 
-        <span style="color:#c5a880;letter-spacing:3px;font-size:15px;">
+        <span class="hero-from-right"
+              style="color:#c5a880;letter-spacing:3px;font-size:15px;">
             TRUST • INTEGRITY • JUSTICE
         </span>
 
-        <h1>Excellence. Integrity. Results.</h1>
+        <h1 class="hero-from-left">
+            Excellence. Integrity. Results.
+        </h1>
 
         <p>
-            Satva Legal provides comprehensive legal solutions for individuals,
-            businesses, and institutions. We combine strategic legal expertise,
-            ethical advocacy, and practical solutions to protect what matters most.
+            Satva Legal provides trusted legal solutions for individuals, businesses, and institutions across Kerala. We combine legal expertise, strategic thinking, and ethical advocacy to deliver practical solutions tailored to every client’s needs.
+
+With professionalism, integrity, and a client-focused approach, we work to protect your interests and help you navigate legal challenges with confidence.
+
         </p>
 
         <div style="margin-top:30px;">
@@ -1207,22 +1323,22 @@ font-size:2.2rem;
                     flex-wrap:wrap;
                     margin-top:60px;">
 
-            <div>
+            <div class="hero-stat">
                 <h2 style="color:#c5a880;font-size:38px;">25+</h2>
                 <p>Practice Areas</p>
             </div>
 
-            <div>
+            <div class="hero-stat">
                 <h2 style="color:#c5a880;font-size:38px;">98%</h2>
                 <p>Client Satisfaction</p>
             </div>
 
-            <div>
+            <div class="hero-stat">
                 <h2 style="color:#c5a880;font-size:38px;">100%</h2>
                 <p>Confidential</p>
             </div>
 
-            <div>
+            <div class="hero-stat">
                 <h2 style="color:#c5a880;font-size:38px;">24/7</h2>
                 <p>Legal Support</p>
             </div>
@@ -1823,14 +1939,19 @@ card.style.transform="";
                     <i class="fas fa-map-marker-alt"></i>
                     <span>Satva Legal,<br>Vasam Ground Floor,<br>Balussery, Kozhikode,<br>Kerala, India, PIN - 673613</span>
                 </div>
-                <div class="info-item">
-                    <i class="fas fa-phone-alt"></i>
-                    <span>+91 81477 24990</span>
-                </div>
-                <div class="info-item">
-                    <i class="fas fa-envelope"></i>
-                    <span>contact@satvalegal.com</span>
-                </div>
+                <div class="info-item"> 
+    <i class="fas fa-phone-alt"></i> 
+    <span>
+        <a href="tel:+918147724990">+91 81477 24990</a>
+    </span>
+</div> 
+
+<div class="info-item"> 
+    <i class="fas fa-envelope"></i> 
+    <span>
+        <a href="mailto:contact@satvalegal.com">contact@satvalegal.com</a>
+    </span>
+</div>
             </div>
 
             <div class="contact-form">
@@ -1942,5 +2063,38 @@ window.addEventListener("load", revealProcessCards);
 
 revealProcessCards();
     </script>
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const animatedElements = document.querySelectorAll(
+        ".hero-from-right, .hero-from-left, .hero-stat"
+    );
+
+    const observer = new IntersectionObserver(
+        function (entries, observer) {
+
+            entries.forEach(function (entry) {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add("animate");
+
+                    observer.unobserve(entry.target);
+                }
+
+            });
+
+        },
+        {
+            threshold: 0.2
+        }
+    );
+
+    animatedElements.forEach(function (element) {
+        observer.observe(element);
+    });
+
+});
+</script>
 </body>
 </html>
