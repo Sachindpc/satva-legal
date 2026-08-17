@@ -69,8 +69,8 @@
 }
 
 .brand-logo img {
-    width: 54px;
-    height: 54px;
+    width: 52px;
+    height: 52px;
     border-radius: 50%;
     object-fit: cover;
     background: #ffffff;
@@ -341,6 +341,15 @@
             padding-bottom: 2rem;
             margin-bottom: 1.5rem;
         }
+        .footer-logo-bottom {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #ffffff;
+    display: block;
+    margin: 0 auto 1.2rem auto;
+}
 
         .social-icons a {
             color: var(--text-light);
@@ -1261,7 +1270,22 @@ STAGGER STATISTICS
 .hero-stat:nth-child(4).animate {
     transition-delay: 0.36s;
 }
+.form-message {
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 500;
+    min-height: 22px;
+    transition: all 0.3s ease;
+}
 
+.form-message.success {
+    color: #2f855a;
+}
+
+.form-message.error {
+    color: #c53030;
+}
 
 /* =========================================
 REDUCED MOTION
@@ -1601,13 +1625,24 @@ Whether representing individuals, businesses, or institutions, we approach each 
     animation:floatIcon 3s ease-in-out infinite;
 }
 
-.feature-box:hover .feature-icon-wrapper{
+/* Icon spins when the card appears during scrolling */
+.feature-box.show .feature-icon-wrapper{
     background:var(--primary);
-    transform:rotate(360deg) scale(1.08);
+    animation: spinIcon 0.8s ease-out;
 }
 
-.feature-box:hover .feature-icon-wrapper i{
+.feature-box.show .feature-icon-wrapper i{
     color:var(--secondary);
+}
+
+@keyframes spinIcon{
+    from{
+        transform:rotate(0deg) scale(1);
+    }
+
+    to{
+        transform:rotate(360deg) scale(1.08);
+    }
 }
 
 .feature-box h3{
@@ -1789,151 +1824,151 @@ card.style.transform="";
             <h2 class="section-title">Core Practice Areas</h2>
             <div class="services-grid">
                 
-                <div class="service-card">
+                <div class="service-card hero-from-left"">
                     <i class="fas fa-gavel"></i>
                     <h3>Civil Law</h3>
                     <p>Dispute resolution, breach of contract, tort claims, and property liability litigation.</p>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card hero-from-right">
                     <i class="fa-solid fa-handcuffs"></i>
                     <h3>Criminal Law</h3>
                     <p>White-collar defense, appellate representation, and robust protection of constitutional rights.</p>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card hero-from-left">
                     <i class="fas fa-users"></i>
                     <h3>Family Law</h3>
                     <p>Matrimonial disputes, asset division, child custody, and estate administration structures.</p>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card hero-from-right">
                     <i class="fas fa-briefcase"></i>
                     <h3>Corporate & Business Law</h3>
                     <p>Mergers & acquisitions, corporate governance, cross-border investments, and restructuring.</p>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card hero-from-left">
                     <i class="fas fa-user-tie"></i>
                     <h3>Employment & Labour</h3>
                     <p>Workplace regulatory advisory, compliance audits, and collective bargaining navigation.</p>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card hero-from-right">
                     <i class="fas fa-building"></i>
                     <h3>Property & Real Estate</h3>
                     <p>Zoning compliance, commercial leases, land acquisitions, and titles review.</p>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card hero-from-left">
                     <i class="fas fa-file-signature"></i>
                     <h3>Contract Law</h3>
                     <p>Strategic drafting, stringent risk-mitigation audits, and transactional negotiation execution.</p>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card hero-from-right">
                     <i class="fas fa-lightbulb"></i>
                     <h3>Intellectual Property Law</h3>
                     <p>Patent procurement, copyright protections, trademark portfolios, and trade secret asset litigation.</p>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card hero-from-left">
                     <i class="fas fa-calculator"></i>
                     <h3>Tax Law</h3>
                     <p>Corporate tax structuring, cross-border operations strategy, and administrative dispute representation.</p>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card hero-from-right">
                     <i class="fas fa-landmark"></i>
                     <h3>Banking & Finance Law</h3>
                     <p>Structured finance, debt restructurings, regulatory compliances, and capital market transactions.</p>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card hero-from-left">
                     <i class="fas fa-laptop-code"></i>
                     <h3>Cyber & Technology Law</h3>
                     <p>Data privacy architecture, e-commerce parameters, and proactive cybersecurity liability mitigations.</p>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card hero-from-right">
                     <i class="fas fa-shopping-cart"></i>
                     <h3>Consumer Protection</h3>
                     <p>Class action lawsuits, product liability defense, and compliance standards evaluation.</p>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card hero-from-left">
                     <i class="fas fa-passport"></i>
                     <h3>Immigration Law</h3>
                     <p>Corporate mobility, skilled visa expediting, and citizenship advisory protocols.</p>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card hero-from-right">
                     <i class="fa-solid fa-shield-halved"></i>
                     <h3>Insurance Law</h3>
                     <p>Complex claim litigation, coverage assessments, and regulatory frameworks strategy.</p>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card hero-from-left">
                     <i class="fas fa-seedling"></i>
                     <h3>Environmental Law</h3>
                     <p>ESG reporting frameworks, cleantech compliance, and environmental liability advocacy.</p>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card hero-from-right">
                     <i class="fas fa-balance-scale"></i>
                     <h3>Constitutional Law</h3>
                     <p>Writs filings, fundamental civil liberties advocacy, and statutory interpretation challenges.</p>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card hero-from-left">
                     <i class="fas fa-university"></i>
                     <h3>Administrative Law</h3>
                     <p>Challenging regulatory agency mandates, licensing panels representations, and appeals.</p>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card hero-from-right">
                     <i class="fas fa-handshake"></i>
                     <h3>Arbitration & Mediation</h3>
                     <p>Alternative Dispute Resolutions (ADR) aimed at optimal non-litigious results.</p>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card hero-from-left">
                     <i class="fas fa-globe"></i>
                     <h3>International Law</h3>
                     <p>Sovereign matters, jurisdictional enforcement, and global trade treaties handling.</p>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card hero-from-right">
                     <i class="fas fa-hand-holding-heart"></i>
                     <h3>Human Rights Law</h3>
                     <p>Public interest litigations, institutional reform efforts, and civil liberties protection.</p>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card hero-from-left">
                     <i class="fas fa-heartbeat"></i>
                     <h3>Healthcare & Medical Law</h3>
                     <p>Malpractice risk management, bio-tech regulations, and institutional operational ethics.</p>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card hero-from-right">
                     <i class="fas fa-ship"></i>
                     <h3>Maritime & Aviation</h3>
                     <p>Logistics liabilities, international freight disputes, and transport compliance laws.</p>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card hero-from-left">
                     <i class="fas fa-graduation-cap"></i>
                     <h3>Education Law</h3>
                     <p>Institutional policies structuring, academic boards governance, and student rights.</p>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card hero-from-right">
                     <i class="fas fa-rocket"></i>
                     <h3>Startup & Compliance</h3>
                     <p>Venture structures, cap table advice, safe agreement mechanics, and foundational licensing.</p>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card hero-from-left">
                     <i class="fas fa-file-alt"></i>
                     <h3>Legal Documentation</h3>
                     <p>Precision execution of deeds, indemnities, power of attorney mandates, and vital filings.</p>
@@ -1995,23 +2030,33 @@ card.style.transform="";
                         <textarea id="message" rows="4" class="form-control" required></textarea>
                     </div>
                     <button type="submit" class="btn">Submit Request</button>
+
+                    <p id="formMessage" class="form-message"></p>   
                 </form>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="brand-logo" style="font-size: 1.5rem;">SATVA LEGAL</div>
-            <div class="social-icons">
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-            </div>
+    <!-- Footer -->
+<footer>
+    <div class="footer-content">
+        <div class="brand-logo" style="font-size: 1.5rem;">SATVA LEGAL</div>
+
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
         </div>
-        <p style="font-size: 0.85rem; color: #a0aec0;">&copy; 2026 Satva Legal. All Rights Reserved. Attorney Advertising.</p>
-    </footer>
+    </div>
+
+    <!-- Footer Logo -->
+    <img src="satva-logo.png" alt="Satva Legal Logo" class="footer-logo-bottom">
+
+    <p style="font-size: 0.85rem; color: #a0aec0;">
+        &copy; 2026 Satva Legal. All Rights Reserved. Attorney Advertising.
+    </p>
+</footer>
 
     <!-- JavaScript for Mobile Menu and Form Submission -->
     <script>
