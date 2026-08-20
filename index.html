@@ -1365,329 +1365,768 @@ REDUCED MOTION
                 transition: none !important;
             }
         }
-    
-/* =========================================================
+
+        /* =========================================================
    SATVA LEGAL — PREMIUM VISUAL UPGRADE
    ========================================================= */
-:root{
-    --primary:#0b1930;
-    --secondary:#c9aa78;
-    --gold-light:#e7cf9e;
-    --ink:#1f2937;
-    --muted:#64748b;
-    --surface:#ffffff;
-    --surface-2:#f7f8fa;
-    --line:rgba(15,30,54,.10);
-    --shadow:0 20px 60px rgba(15,30,54,.10);
-    --shadow-lg:0 30px 90px rgba(15,30,54,.16);
-}
+        :root {
+            --primary: #0b1930;
+            --secondary: #c9aa78;
+            --gold-light: #e7cf9e;
+            --ink: #1f2937;
+            --muted: #64748b;
+            --surface: #ffffff;
+            --surface-2: #f7f8fa;
+            --line: rgba(15, 30, 54, .10);
+            --shadow: 0 20px 60px rgba(15, 30, 54, .10);
+            --shadow-lg: 0 30px 90px rgba(15, 30, 54, .16);
+        }
 
-html{scroll-behavior:smooth;scroll-padding-top:90px}
-body{background:#fff}
-::selection{background:var(--secondary);color:var(--primary)}
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 90px
+        }
 
-body::before{
-    content:"";
-    position:fixed;
-    inset:0;
-    pointer-events:none;
-    z-index:9998;
-    opacity:.025;
-    background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
-}
+        body {
+            background: #fff
+        }
 
-#scrollProgress{
-    position:fixed;top:0;left:0;width:0;height:3px;
-    background:linear-gradient(90deg,var(--secondary),var(--gold-light));
-    z-index:10001;box-shadow:0 0 12px rgba(201,170,120,.65);
-}
+        ::selection {
+            background: var(--secondary);
+            color: var(--primary)
+        }
 
-header{
-    transition:background .35s ease, box-shadow .35s ease, backdrop-filter .35s ease;
-}
-header.scrolled{
-    background:rgba(11,25,48,.88);
-    backdrop-filter:blur(16px);
-    box-shadow:0 10px 35px rgba(0,0,0,.18);
-}
-header.scrolled .navbar{padding-top:.75rem;padding-bottom:.75rem}
-.navbar{transition:padding .35s ease}
-.nav-links a{position:relative}
-.nav-links a::after{
-    content:"";position:absolute;left:0;bottom:-8px;width:0;height:2px;
-    background:var(--secondary);transition:width .3s ease;
-}
-.nav-links a:hover::after,.nav-links a.active::after{width:100%}
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 9998;
+            opacity: .025;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+        }
 
-.hero{
-    position:relative;
-    overflow:hidden;
-    isolation:isolate;
-    background-attachment:fixed;
-}
-.hero::before,.hero::after{
-    content:"";position:absolute;border-radius:50%;pointer-events:none;z-index:-1;
-}
-.hero::before{
-    width:480px;height:480px;right:-180px;top:-160px;
-    border:1px solid rgba(201,170,120,.18);
-    box-shadow:0 0 0 70px rgba(201,170,120,.025),0 0 0 140px rgba(201,170,120,.015);
-    animation:heroOrb 12s ease-in-out infinite;
-}
-.hero::after{
-    width:320px;height:320px;left:-160px;bottom:-140px;
-    background:radial-gradient(circle,rgba(201,170,120,.12),transparent 68%);
-    animation:heroOrb 9s ease-in-out infinite reverse;
-}
-.hero-content{position:relative;z-index:2}
-.hero-content h1{
-    text-shadow:0 12px 40px rgba(0,0,0,.28);
-}
-.hero-content p{color:#d8dee8}
-.hero .btn{
-    position:relative;overflow:hidden;
-    transform:translateZ(0);
-}
-.hero .btn::before{
-    content:"";position:absolute;top:0;left:-120%;width:80%;height:100%;
-    background:linear-gradient(100deg,transparent,rgba(255,255,255,.32),transparent);
-    transform:skewX(-18deg);transition:left .7s ease;
-}
-.hero .btn:hover::before{left:140%}
+        #scrollProgress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--secondary), var(--gold-light));
+            z-index: 10001;
+            box-shadow: 0 0 12px rgba(201, 170, 120, .65);
+        }
 
-.hero-stat{
-    min-width:115px;
-    position:relative;
-}
-.hero-stat h2{
-    text-shadow:0 0 25px rgba(201,170,120,.25);
-}
-.hero-stat p{color:#d7dee8!important}
+        header {
+            transition: background .35s ease, box-shadow .35s ease, backdrop-filter .35s ease;
+        }
 
-.section{position:relative}
-.section-title{letter-spacing:.5px}
-.section-title::before{
-    content:"";
-    position:absolute;
-    width:9px;height:9px;border:1px solid var(--secondary);
-    transform:rotate(45deg);left:50%;bottom:-7px;margin-left:-5px;background:#fff;
-}
-.section-title::after{width:95px;height:1px}
+        header.scrolled {
+            background: rgba(11, 25, 48, .88);
+            backdrop-filter: blur(16px);
+            box-shadow: 0 10px 35px rgba(0, 0, 0, .18);
+        }
 
-.stat-box,.service-card,.feature-box,.contact-form{
-    transition:transform .45s cubic-bezier(.22,1,.36,1),box-shadow .45s ease,border-color .35s ease;
-}
-.stat-box{
-    position:relative;overflow:hidden;border:1px solid transparent;
-}
-.stat-box::after{
-    content:"";position:absolute;width:100px;height:100px;border-radius:50%;
-    right:-45px;top:-45px;background:rgba(201,170,120,.08);
-}
-.stat-box:hover{transform:translateY(-7px);box-shadow:var(--shadow);border-color:rgba(201,170,120,.35)}
+        header.scrolled .navbar {
+            padding-top: .75rem;
+            padding-bottom: .75rem
+        }
 
-.service-card{
-    position:relative;overflow:hidden;
-    border:1px solid rgba(15,30,54,.06);
-}
-.service-card::before{
-    content:"";position:absolute;left:0;bottom:0;width:100%;height:3px;
-    transform:scaleX(0);transform-origin:left;
-    background:linear-gradient(90deg,var(--secondary),var(--gold-light));
-    transition:transform .45s ease;
-}
-.service-card:hover::before{transform:scaleX(1)}
-.service-card:hover{transform:translateY(-9px) scale(1.01);box-shadow:var(--shadow)}
-.service-card i{transition:transform .4s ease}
-.service-card:hover i{transform:translateY(-4px) scale(1.08) rotate(-4deg)}
+        .navbar {
+            transition: padding .35s ease
+        }
 
-.reveal-up,.reveal-left,.reveal-right,.scale-reveal{
-    opacity:0;will-change:transform,opacity;
-    transition:opacity .8s ease,transform .9s cubic-bezier(.22,1,.36,1);
-}
-.reveal-up{transform:translateY(50px)}
-.reveal-left{transform:translateX(-55px)}
-.reveal-right{transform:translateX(55px)}
-.scale-reveal{transform:scale(.92)}
-.revealed{opacity:1;transform:none}
+        .nav-links a {
+            position: relative
+        }
 
-.delay-1{transition-delay:.08s}.delay-2{transition-delay:.16s}
-.delay-3{transition-delay:.24s}.delay-4{transition-delay:.32s}
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: width .3s ease;
+        }
 
-.luxury-band{
-    position:relative;overflow:hidden;
-    background:
-      radial-gradient(circle at 10% 20%,rgba(201,170,120,.16),transparent 30%),
-      radial-gradient(circle at 90% 80%,rgba(201,170,120,.10),transparent 30%),
-      var(--primary);
-    color:#fff;
-}
-.luxury-band::before{
-    content:"";position:absolute;inset:0;opacity:.35;
-    background:linear-gradient(115deg,transparent 20%,rgba(255,255,255,.04) 50%,transparent 80%);
-    transform:translateX(-100%);animation:shine 8s linear infinite;
-}
-.luxury-inner{
-    max-width:1200px;margin:auto;padding:90px 2rem;
-    position:relative;z-index:1;
-}
-.luxury-grid{
-    display:grid;grid-template-columns:1.2fr .8fr;gap:4rem;align-items:center;
-}
-.eyebrow{
-    color:var(--secondary);letter-spacing:3px;text-transform:uppercase;
-    font-size:.78rem;font-weight:700;
-}
-.luxury-band h2{
-    font-size:clamp(2.2rem,4vw,3.5rem);line-height:1.1;margin:16px 0 20px;
-}
-.luxury-band p{color:#cbd5e1;max-width:680px;line-height:1.9}
-.principles{
-    display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2rem;
-}
-.principle{
-    padding:1.2rem;border:1px solid rgba(255,255,255,.11);
-    background:rgba(255,255,255,.035);backdrop-filter:blur(8px);
-    border-radius:10px;transition:.4s ease;
-}
-.principle:hover{transform:translateY(-6px);border-color:rgba(201,170,120,.5)}
-.principle i{color:var(--secondary);font-size:1.2rem;margin-bottom:.7rem}
-.principle h4{font-family:Inter,sans-serif;margin-bottom:.25rem}
-.principle span{font-size:.82rem;color:#aeb9c8}
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%
+        }
 
-.promise-card{
-    border:1px solid rgba(201,170,120,.28);
-    padding:2rem;border-radius:18px;
-    background:linear-gradient(145deg,rgba(255,255,255,.08),rgba(255,255,255,.025));
-    box-shadow:0 25px 70px rgba(0,0,0,.22);
-}
-.promise-card .seal{
-    width:82px;height:82px;border:1px solid var(--secondary);border-radius:50%;
-    display:grid;place-items:center;margin-bottom:1.5rem;color:var(--secondary);
-    position:relative;
-}
-.promise-card .seal::after{
-    content:"";position:absolute;inset:7px;border:1px dashed rgba(201,170,120,.55);border-radius:50%;
-}
-.promise-card h3{color:#fff;margin-bottom:.8rem}
-.promise-card p{font-size:.92rem}
+        .hero {
+            position: relative;
+            overflow: hidden;
+            isolation: isolate;
+            background-attachment: fixed;
+        }
 
-.insights-section{background:#f7f8fa}
-.insights-grid{
-    display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;
-}
-.insight-card{
-    background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;
-    box-shadow:0 8px 30px rgba(15,30,54,.05);
-    transition:.45s cubic-bezier(.22,1,.36,1);
-}
-.insight-card:hover{transform:translateY(-10px);box-shadow:var(--shadow-lg)}
-.insight-top{
-    height:8px;background:linear-gradient(90deg,var(--primary),var(--secondary));
-}
-.insight-body{padding:1.8rem}
-.insight-icon{
-    width:52px;height:52px;border-radius:12px;background:#f5efe5;
-    color:var(--primary);display:grid;place-items:center;font-size:1.2rem;margin-bottom:1.2rem;
-}
-.insight-card h3{font-size:1.2rem;color:var(--primary);margin-bottom:.7rem}
-.insight-card p{color:var(--muted);font-size:.9rem;line-height:1.75}
-.insight-link{
-    display:inline-flex;align-items:center;gap:.5rem;margin-top:1.1rem;
-    color:var(--primary);font-weight:700;font-size:.85rem;text-decoration:none;
-}
-.insight-link i{color:var(--secondary);transition:.3s}
-.insight-card:hover .insight-link i{transform:translateX(5px)}
+        .hero::before,
+        .hero::after {
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: -1;
+        }
 
-.faq-section{background:#fff}
-.faq-wrap{max-width:900px;margin:auto}
-.faq-item{
-    border-bottom:1px solid #e5e7eb;
-}
-.faq-question{
-    width:100%;background:none;border:0;padding:1.35rem 0;
-    display:flex;justify-content:space-between;align-items:center;
-    cursor:pointer;text-align:left;color:var(--primary);
-    font:600 1rem Inter,sans-serif;
-}
-.faq-question i{color:var(--secondary);transition:.35s}
-.faq-answer{
-    display:grid;grid-template-rows:0fr;
-    transition:grid-template-rows .4s ease;
-}
-.faq-answer>div{overflow:hidden;color:var(--muted);line-height:1.8;font-size:.92rem}
-.faq-item.open .faq-answer{grid-template-rows:1fr}
-.faq-item.open .faq-question i{transform:rotate(45deg)}
+        .hero::before {
+            width: 480px;
+            height: 480px;
+            right: -180px;
+            top: -160px;
+            border: 1px solid rgba(201, 170, 120, .18);
+            box-shadow: 0 0 0 70px rgba(201, 170, 120, .025), 0 0 0 140px rgba(201, 170, 120, .015);
+            animation: heroOrb 12s ease-in-out infinite;
+        }
 
-.cta-section{
-    padding:95px 2rem;
-    background:linear-gradient(180deg,#fff 0%,#f6f7f9 100%);
-}
-.cta-box{
-    max-width:1100px;margin:auto;position:relative;overflow:hidden;
-    padding:4rem 3rem;border-radius:20px;background:var(--primary);color:#fff;
-    box-shadow:var(--shadow-lg);text-align:center;
-}
-.cta-box::before{
-    content:"";position:absolute;width:260px;height:260px;border-radius:50%;
-    border:1px solid rgba(201,170,120,.22);left:-90px;top:-100px;
-}
-.cta-box::after{
-    content:"";position:absolute;width:190px;height:190px;border-radius:50%;
-    border:1px solid rgba(201,170,120,.15);right:-60px;bottom:-90px;
-}
-.cta-box>*{position:relative;z-index:1}
-.cta-box h2{font-size:clamp(2rem,4vw,3rem);margin-bottom:1rem}
-.cta-box p{color:#cbd5e1;max-width:650px;margin:0 auto 1.8rem;line-height:1.8}
+        .hero::after {
+            width: 320px;
+            height: 320px;
+            left: -160px;
+            bottom: -140px;
+            background: radial-gradient(circle, rgba(201, 170, 120, .12), transparent 68%);
+            animation: heroOrb 9s ease-in-out infinite reverse;
+        }
 
-.back-to-top{
-    position:fixed;right:22px;bottom:82px;width:44px;height:44px;border-radius:50%;
-    border:1px solid rgba(201,170,120,.55);background:rgba(11,25,48,.92);color:var(--secondary);
-    display:grid;place-items:center;text-decoration:none;z-index:9997;
-    opacity:0;visibility:hidden;transform:translateY(15px);transition:.35s ease;
-}
-.back-to-top.visible{opacity:1;visibility:visible;transform:none}
-.back-to-top:hover{transform:translateY(-4px);background:var(--secondary);color:var(--primary)}
+        .hero-content {
+            position: relative;
+            z-index: 2
+        }
 
-.cursor-glow{
-    position:fixed;width:280px;height:280px;border-radius:50%;pointer-events:none;
-    background:radial-gradient(circle,rgba(201,170,120,.08),transparent 68%);
-    transform:translate(-50%,-50%);z-index:9990;mix-blend-mode:screen;
-}
+        .hero-content h1 {
+            text-shadow: 0 12px 40px rgba(0, 0, 0, .28);
+        }
 
-@keyframes heroOrb{0%,100%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(18px,22px,0) scale(1.05)}}
-@keyframes shine{to{transform:translateX(100%)}}
+        .hero-content p {
+            color: #d8dee8
+        }
 
-@media(max-width:900px){
-    .luxury-grid{grid-template-columns:1fr;gap:2.5rem}
-    .insights-grid{grid-template-columns:1fr 1fr}
-}
-@media(max-width:768px){
-    .hero{background-attachment:scroll}
-    .principles{grid-template-columns:1fr}
-    .insights-grid{grid-template-columns:1fr}
-    .luxury-inner{padding:70px 1.2rem}
-    .luxury-band h2{font-size:2.2rem}
-    .cta-section{padding:70px 1.2rem}
-    .cta-box{padding:3rem 1.3rem}
-    .cursor-glow{display:none}
-}
-@media(prefers-reduced-motion:reduce){
-    html{scroll-behavior:auto}
-    *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
-    .cursor-glow{display:none}
-}
+        .hero .btn {
+            position: relative;
+            overflow: hidden;
+            transform: translateZ(0);
+        }
 
+        .hero .btn::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -120%;
+            width: 80%;
+            height: 100%;
+            background: linear-gradient(100deg, transparent, rgba(255, 255, 255, .32), transparent);
+            transform: skewX(-18deg);
+            transition: left .7s ease;
+        }
+
+        .hero .btn:hover::before {
+            left: 140%
+        }
+
+        .hero-stat {
+            min-width: 115px;
+            position: relative;
+        }
+
+        .hero-stat h2 {
+            text-shadow: 0 0 25px rgba(201, 170, 120, .25);
+        }
+
+        .hero-stat p {
+            color: #d7dee8 !important
+        }
+
+        .section {
+            position: relative
+        }
+
+        .section-title {
+            letter-spacing: .5px
+        }
+
+        .section-title::before {
+            content: "";
+            position: absolute;
+            width: 9px;
+            height: 9px;
+            border: 1px solid var(--secondary);
+            transform: rotate(45deg);
+            left: 50%;
+            bottom: -7px;
+            margin-left: -5px;
+            background: #fff;
+        }
+
+        .section-title::after {
+            width: 95px;
+            height: 1px
+        }
+
+        .stat-box,
+        .service-card,
+        .feature-box,
+        .contact-form {
+            transition: transform .45s cubic-bezier(.22, 1, .36, 1), box-shadow .45s ease, border-color .35s ease;
+        }
+
+        .stat-box {
+            position: relative;
+            overflow: hidden;
+            border: 1px solid transparent;
+        }
+
+        .stat-box::after {
+            content: "";
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            right: -45px;
+            top: -45px;
+            background: rgba(201, 170, 120, .08);
+        }
+
+        .stat-box:hover {
+            transform: translateY(-7px);
+            box-shadow: var(--shadow);
+            border-color: rgba(201, 170, 120, .35)
+        }
+
+        .service-card {
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(15, 30, 54, .06);
+        }
+
+        .service-card::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 3px;
+            transform: scaleX(0);
+            transform-origin: left;
+            background: linear-gradient(90deg, var(--secondary), var(--gold-light));
+            transition: transform .45s ease;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1)
+        }
+
+        .service-card:hover {
+            transform: translateY(-9px) scale(1.01);
+            box-shadow: var(--shadow)
+        }
+
+        .service-card i {
+            transition: transform .4s ease
+        }
+
+        .service-card:hover i {
+            transform: translateY(-4px) scale(1.08) rotate(-4deg)
+        }
+
+        .reveal-up,
+        .reveal-left,
+        .reveal-right,
+        .scale-reveal {
+            opacity: 0;
+            will-change: transform, opacity;
+            transition: opacity .8s ease, transform .9s cubic-bezier(.22, 1, .36, 1);
+        }
+
+        .reveal-up {
+            transform: translateY(50px)
+        }
+
+        .reveal-left {
+            transform: translateX(-55px)
+        }
+
+        .reveal-right {
+            transform: translateX(55px)
+        }
+
+        .scale-reveal {
+            transform: scale(.92)
+        }
+
+        .revealed {
+            opacity: 1;
+            transform: none
+        }
+
+        .delay-1 {
+            transition-delay: .08s
+        }
+
+        .delay-2 {
+            transition-delay: .16s
+        }
+
+        .delay-3 {
+            transition-delay: .24s
+        }
+
+        .delay-4 {
+            transition-delay: .32s
+        }
+
+        .luxury-band {
+            position: relative;
+            overflow: hidden;
+            background:
+                radial-gradient(circle at 10% 20%, rgba(201, 170, 120, .16), transparent 30%),
+                radial-gradient(circle at 90% 80%, rgba(201, 170, 120, .10), transparent 30%),
+                var(--primary);
+            color: #fff;
+        }
+
+        .luxury-band::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            opacity: .35;
+            background: linear-gradient(115deg, transparent 20%, rgba(255, 255, 255, .04) 50%, transparent 80%);
+            transform: translateX(-100%);
+            animation: shine 8s linear infinite;
+        }
+
+        .luxury-inner {
+            max-width: 1200px;
+            margin: auto;
+            padding: 90px 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .luxury-grid {
+            display: grid;
+            grid-template-columns: 1.2fr .8fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .eyebrow {
+            color: var(--secondary);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-size: .78rem;
+            font-weight: 700;
+        }
+
+        .luxury-band h2 {
+            font-size: clamp(2.2rem, 4vw, 3.5rem);
+            line-height: 1.1;
+            margin: 16px 0 20px;
+        }
+
+        .luxury-band p {
+            color: #cbd5e1;
+            max-width: 680px;
+            line-height: 1.9
+        }
+
+        .principles {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .principle {
+            padding: 1.2rem;
+            border: 1px solid rgba(255, 255, 255, .11);
+            background: rgba(255, 255, 255, .035);
+            backdrop-filter: blur(8px);
+            border-radius: 10px;
+            transition: .4s ease;
+        }
+
+        .principle:hover {
+            transform: translateY(-6px);
+            border-color: rgba(201, 170, 120, .5)
+        }
+
+        .principle i {
+            color: var(--secondary);
+            font-size: 1.2rem;
+            margin-bottom: .7rem
+        }
+
+        .principle h4 {
+            font-family: Inter, sans-serif;
+            margin-bottom: .25rem
+        }
+
+        .principle span {
+            font-size: .82rem;
+            color: #aeb9c8
+        }
+
+        .promise-card {
+            border: 1px solid rgba(201, 170, 120, .28);
+            padding: 2rem;
+            border-radius: 18px;
+            background: linear-gradient(145deg, rgba(255, 255, 255, .08), rgba(255, 255, 255, .025));
+            box-shadow: 0 25px 70px rgba(0, 0, 0, .22);
+        }
+
+        .promise-card .seal {
+            width: 82px;
+            height: 82px;
+            border: 1px solid var(--secondary);
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            margin-bottom: 1.5rem;
+            color: var(--secondary);
+            position: relative;
+        }
+
+        .promise-card .seal::after {
+            content: "";
+            position: absolute;
+            inset: 7px;
+            border: 1px dashed rgba(201, 170, 120, .55);
+            border-radius: 50%;
+        }
+
+        .promise-card h3 {
+            color: #fff;
+            margin-bottom: .8rem
+        }
+
+        .promise-card p {
+            font-size: .92rem
+        }
+
+        .insights-section {
+            background: #f7f8fa
+        }
+
+        .insights-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .insight-card {
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(15, 30, 54, .05);
+            transition: .45s cubic-bezier(.22, 1, .36, 1);
+        }
+
+        .insight-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg)
+        }
+
+        .insight-top {
+            height: 8px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+        }
+
+        .insight-body {
+            padding: 1.8rem
+        }
+
+        .insight-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 12px;
+            background: #f5efe5;
+            color: var(--primary);
+            display: grid;
+            place-items: center;
+            font-size: 1.2rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .insight-card h3 {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: .7rem
+        }
+
+        .insight-card p {
+            color: var(--muted);
+            font-size: .9rem;
+            line-height: 1.75
+        }
+
+        .insight-link {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            margin-top: 1.1rem;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: .85rem;
+            text-decoration: none;
+        }
+
+        .insight-link i {
+            color: var(--secondary);
+            transition: .3s
+        }
+
+        .insight-card:hover .insight-link i {
+            transform: translateX(5px)
+        }
+
+        .faq-section {
+            background: #fff
+        }
+
+        .faq-wrap {
+            max-width: 900px;
+            margin: auto
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: 0;
+            padding: 1.35rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            text-align: left;
+            color: var(--primary);
+            font: 600 1rem Inter, sans-serif;
+        }
+
+        .faq-question i {
+            color: var(--secondary);
+            transition: .35s
+        }
+
+        .faq-answer {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows .4s ease;
+        }
+
+        .faq-answer>div {
+            overflow: hidden;
+            color: var(--muted);
+            line-height: 1.8;
+            font-size: .92rem
+        }
+
+        .faq-item.open .faq-answer {
+            grid-template-rows: 1fr
+        }
+
+        .faq-item.open .faq-question i {
+            transform: rotate(45deg)
+        }
+
+        .cta-section {
+            padding: 95px 2rem;
+            background: linear-gradient(180deg, #fff 0%, #f6f7f9 100%);
+        }
+
+        .cta-box {
+            max-width: 1100px;
+            margin: auto;
+            position: relative;
+            overflow: hidden;
+            padding: 4rem 3rem;
+            border-radius: 20px;
+            background: var(--primary);
+            color: #fff;
+            box-shadow: var(--shadow-lg);
+            text-align: center;
+        }
+
+        .cta-box::before {
+            content: "";
+            position: absolute;
+            width: 260px;
+            height: 260px;
+            border-radius: 50%;
+            border: 1px solid rgba(201, 170, 120, .22);
+            left: -90px;
+            top: -100px;
+        }
+
+        .cta-box::after {
+            content: "";
+            position: absolute;
+            width: 190px;
+            height: 190px;
+            border-radius: 50%;
+            border: 1px solid rgba(201, 170, 120, .15);
+            right: -60px;
+            bottom: -90px;
+        }
+
+        .cta-box>* {
+            position: relative;
+            z-index: 1
+        }
+
+        .cta-box h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 1rem
+        }
+
+        .cta-box p {
+            color: #cbd5e1;
+            max-width: 650px;
+            margin: 0 auto 1.8rem;
+            line-height: 1.8
+        }
+
+        .back-to-top {
+            position: fixed;
+            right: 22px;
+            bottom: 82px;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: 1px solid rgba(201, 170, 120, .55);
+            background: rgba(11, 25, 48, .92);
+            color: var(--secondary);
+            display: grid;
+            place-items: center;
+            text-decoration: none;
+            z-index: 9997;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(15px);
+            transition: .35s ease;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: none
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-4px);
+            background: var(--secondary);
+            color: var(--primary)
+        }
+
+        .cursor-glow {
+            position: fixed;
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            pointer-events: none;
+            background: radial-gradient(circle, rgba(201, 170, 120, .08), transparent 68%);
+            transform: translate(-50%, -50%);
+            z-index: 9990;
+            mix-blend-mode: screen;
+        }
+
+        @keyframes heroOrb {
+
+            0%,
+            100% {
+                transform: translate3d(0, 0, 0) scale(1)
+            }
+
+            50% {
+                transform: translate3d(18px, 22px, 0) scale(1.05)
+            }
+        }
+
+        @keyframes shine {
+            to {
+                transform: translateX(100%)
+            }
+        }
+
+        @media(max-width:900px) {
+            .luxury-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem
+            }
+
+            .insights-grid {
+                grid-template-columns: 1fr 1fr
+            }
+        }
+
+        @media(max-width:768px) {
+            .hero {
+                background-attachment: scroll
+            }
+
+            .principles {
+                grid-template-columns: 1fr
+            }
+
+            .insights-grid {
+                grid-template-columns: 1fr
+            }
+
+            .luxury-inner {
+                padding: 70px 1.2rem
+            }
+
+            .luxury-band h2 {
+                font-size: 2.2rem
+            }
+
+            .cta-section {
+                padding: 70px 1.2rem
+            }
+
+            .cta-box {
+                padding: 3rem 1.3rem
+            }
+
+            .cursor-glow {
+                display: none
+            }
+        }
+
+        @media(prefers-reduced-motion:reduce) {
+            html {
+                scroll-behavior: auto
+            }
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: .001ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: .001ms !important
+            }
+
+            .cursor-glow {
+                display: none
+            }
+        }
     </style>
 </head>
 
 <body>
 
-<div id="scrollProgress"></div>
-<div class="cursor-glow" id="cursorGlow"></div>
-<a href="#home" class="back-to-top" id="backToTop" aria-label="Back to top">
-    <i class="fas fa-arrow-up"></i>
-</a>
+    <div id="scrollProgress"></div>
+    <div class="cursor-glow" id="cursorGlow"></div>
+    <a href="#home" class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
 
 
     <!-- Header & Navigation -->
@@ -1704,8 +2143,8 @@ header.scrolled .navbar{padding-top:.75rem;padding-bottom:.75rem}
                 <li><a href="#home" class="hero-from-left">Home</a></li>
                 <li><a href="#about" class="hero-from-left">About Us</a></li>
                 <li><a href="#services" class="hero-from-left">Practice Areas</a></li>
-<li><a href="#philosophy" class="hero-from-left">Our Approach</a></li>
-<li><a href="#faq" class="hero-from-left">FAQ</a></li>
+                <li><a href="#philosophy" class="hero-from-left">Our Approach</a></li>
+                <li><a href="#faq" class="hero-from-left">FAQ</a></li>
                 <li><a href="#contact" class="hero-from-left">Contact</a></li>
             </ul>
         </nav>
@@ -1973,6 +2412,11 @@ header.scrolled .navbar{padding-top:.75rem;padding-bottom:.75rem}
                 -webkit-mask:
                     linear-gradient(#fff 0 0) content-box,
                     linear-gradient(#fff 0 0);
+
+                mask:
+                    linear-gradient(#fff 0 0) content-box,
+                    linear-gradient(#fff 0 0);
+
                 -webkit-mask-composite: xor;
                 mask-composite: exclude;
 
@@ -2102,6 +2546,272 @@ header.scrolled .navbar{padding-top:.75rem;padding-bottom:.75rem}
 
                 100% {
                     transform: translateY(0);
+                }
+
+            }
+
+            /* =========================================================
+   CONTACT SECTION — VANTA + GLASSMORPHISM
+   ========================================================= */
+
+            #contact {
+                position: relative;
+                overflow: hidden;
+                background: #e9ecef !important;
+            }
+
+            /* Keep Vanta behind everything */
+            #contact-vanta {
+                position: absolute !important;
+                inset: 0;
+                z-index: 0 !important;
+            }
+
+            /* Contact content wrapper */
+            #contact>div:not(#contact-vanta) {
+                position: relative;
+                z-index: 2;
+            }
+
+            /* Contact title */
+            #contact .section-title {
+                color: #ffffff !important;
+                text-shadow: 0 4px 20px rgba(0, 0, 0, 0.45);
+            }
+
+            /* =========================================================
+   GLASS PANELS
+   ========================================================= */
+
+            #contact .contact-info,
+            #contact .contact-form {
+                position: relative;
+                overflow: hidden;
+
+                background: rgba(255, 255, 255, 0.10) !important;
+
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(14px);
+
+                border: 1px solid rgba(255, 255, 255, 0.28);
+
+                border-radius: 20px;
+
+                box-shadow:
+                    0 8px 32px rgba(0, 0, 0, 0.25),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.45),
+                    inset 0 -1px 0 rgba(255, 255, 255, 0.08),
+                    inset 0 0 30px rgba(255, 255, 255, 0.04);
+
+                padding: 2.5rem;
+
+                transition:
+                    transform 0.4s ease,
+                    box-shadow 0.4s ease,
+                    border-color 0.4s ease;
+            }
+
+            /* Top glass highlight */
+            #contact .contact-info::before,
+            #contact .contact-form::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 1px;
+
+                background: linear-gradient(90deg,
+                        transparent,
+                        rgba(255, 255, 255, 0.85),
+                        transparent);
+            }
+
+            /* Left glass edge */
+            #contact .contact-info::after,
+            #contact .contact-form::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+
+                width: 1px;
+                height: 100%;
+
+                background: linear-gradient(180deg,
+                        rgba(255, 255, 255, 0.8),
+                        transparent,
+                        rgba(255, 255, 255, 0.25));
+            }
+
+            /* Hover effect */
+            #contact .contact-info:hover,
+            #contact .contact-form:hover {
+                transform: translateY(-5px);
+
+                border-color: rgba(255, 255, 255, 0.45);
+
+                box-shadow:
+                    0 18px 50px rgba(0, 0, 0, 0.35),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.55),
+                    inset 0 0 30px rgba(255, 255, 255, 0.06);
+            }
+
+
+            /* =========================================================
+   LEFT CONTACT INFORMATION
+   ========================================================= */
+
+            #contact .contact-info h3 {
+                color: #ffffff !important;
+                font-size: 1.5rem;
+                margin-bottom: 1rem;
+            }
+
+            #contact .contact-info>p {
+                color: rgba(255, 255, 255, 0.82) !important;
+                line-height: 1.8;
+            }
+
+            #contact .info-item {
+                position: relative;
+                z-index: 2;
+            }
+
+            #contact .info-item i {
+                color: #e7cf9e !important;
+                text-shadow: 0 0 12px rgba(231, 207, 158, 0.4);
+            }
+
+            #contact .info-item span {
+                color: #ffffff !important;
+            }
+
+            #contact .info-item a {
+                color: #ffffff !important;
+                text-decoration: none;
+                transition: color 0.3s ease;
+            }
+
+            #contact .info-item a:hover {
+                color: #e7cf9e !important;
+            }
+
+
+            /* =========================================================
+   FORM GLASS
+   ========================================================= */
+
+            #contact .contact-form {
+                color: #ffffff;
+            }
+
+            /* Override the old white form background */
+            #contact .contact-form form {
+                position: relative;
+                z-index: 2;
+            }
+
+            #contact .contact-form label {
+                color: #ffffff !important;
+                font-weight: 600;
+            }
+
+            /* Inputs */
+            #contact .form-control {
+                background: rgba(255, 255, 255, 0.12) !important;
+
+                color: #ffffff !important;
+
+                border: 1px solid rgba(255, 255, 255, 0.3) !important;
+
+                border-radius: 10px;
+
+                backdrop-filter: blur(8px);
+                -webkit-backdrop-filter: blur(8px);
+
+                transition:
+                    background 0.3s ease,
+                    border-color 0.3s ease,
+                    box-shadow 0.3s ease;
+            }
+
+            /* Placeholder */
+            #contact .form-control::placeholder {
+                color: rgba(255, 255, 255, 0.6);
+            }
+
+            /* Select option */
+            #contact select.form-control {
+                color: #ffffff !important;
+            }
+
+            #contact select.form-control option {
+                background: #172744;
+                color: #ffffff;
+            }
+
+            /* Focus */
+            #contact .form-control:focus {
+                background: rgba(255, 255, 255, 0.18) !important;
+
+                border-color: #e7cf9e !important;
+
+                box-shadow:
+                    0 0 0 3px rgba(231, 207, 158, 0.12),
+                    0 0 20px rgba(231, 207, 158, 0.08);
+
+                outline: none;
+            }
+
+            /* Submit button */
+            #contact #submitButton {
+                position: relative;
+                z-index: 3;
+
+                background: #c9aa78 !important;
+                color: #0b1930 !important;
+
+                border: 1px solid #e7cf9e;
+
+                border-radius: 10px;
+
+                font-weight: 700;
+
+                transition:
+                    transform 0.3s ease,
+                    background 0.3s ease,
+                    box-shadow 0.3s ease;
+            }
+
+            #contact #submitButton:hover {
+                background: #e7cf9e !important;
+
+                transform: translateY(-2px);
+
+                box-shadow:
+                    0 10px 25px rgba(231, 207, 158, 0.25);
+            }
+
+
+            /* =========================================================
+   MOBILE
+   ========================================================= */
+
+            @media (max-width: 768px) {
+
+                #contact {
+                    padding: 4rem 1.2rem !important;
+                }
+
+                #contact .contact-info,
+                #contact .contact-form {
+                    padding: 1.5rem;
+                    border-radius: 16px;
+                }
+
+                #contact .contact-info h3 {
+                    font-size: 1.3rem;
                 }
 
             }
@@ -2376,258 +3086,376 @@ translateY(-10px)
     </div>
 
 
-<!-- ================= PREMIUM FIRM PHILOSOPHY ================= -->
-<section class="luxury-band" id="philosophy">
-    <div class="luxury-inner">
-        <div class="luxury-grid">
-            <div class="reveal-left">
-                <span class="eyebrow">The Satva Standard</span>
-                <h2>Legal counsel built around clarity, integrity and purpose.</h2>
-                <p>
-                    At Satva Legal, every matter begins with understanding the real problem.
-                    We focus on clear legal analysis, practical strategy and disciplined execution —
-                    so clients can make informed decisions with confidence.
-                </p>
+    <!-- ================= PREMIUM FIRM PHILOSOPHY ================= -->
+    <section class="luxury-band" id="philosophy">
+        <div class="luxury-inner">
+            <div class="luxury-grid">
+                <div class="reveal-left">
+                    <span class="eyebrow">The Satva Standard</span>
+                    <h2>Legal counsel built around clarity, integrity and purpose.</h2>
+                    <p>
+                        At Satva Legal, every matter begins with understanding the real problem.
+                        We focus on clear legal analysis, practical strategy and disciplined execution —
+                        so clients can make informed decisions with confidence.
+                    </p>
 
-                <div class="principles">
-                    <div class="principle">
-                        <i class="fas fa-scale-balanced"></i>
-                        <h4>Integrity</h4>
-                        <span>Advice grounded in professional ethics.</span>
-                    </div>
-                    <div class="principle">
-                        <i class="fas fa-compass"></i>
-                        <h4>Clarity</h4>
-                        <span>Complex legal issues made understandable.</span>
-                    </div>
-                    <div class="principle">
-                        <i class="fas fa-chess-knight"></i>
-                        <h4>Strategy</h4>
-                        <span>Solutions designed around your objectives.</span>
+                    <div class="principles">
+                        <div class="principle">
+                            <i class="fas fa-scale-balanced"></i>
+                            <h4>Integrity</h4>
+                            <span>Advice grounded in professional ethics.</span>
+                        </div>
+                        <div class="principle">
+                            <i class="fas fa-compass"></i>
+                            <h4>Clarity</h4>
+                            <span>Complex legal issues made understandable.</span>
+                        </div>
+                        <div class="principle">
+                            <i class="fas fa-chess-knight"></i>
+                            <h4>Strategy</h4>
+                            <span>Solutions designed around your objectives.</span>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="promise-card reveal-right">
-                <div class="seal"><i class="fas fa-scale-balanced"></i></div>
-                <h3>A commitment beyond paperwork.</h3>
-                <p>
-                    We aim to be more than a legal service provider. Our approach is built around
-                    preparation, communication, confidentiality and long-term client confidence.
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ================= LEGAL INSIGHTS ================= -->
-<section class="section insights-section" id="insights">
-    <h2 class="section-title">Legal Perspectives</h2>
-    <div class="insights-grid">
-        <article class="insight-card reveal-up delay-1">
-            <div class="insight-top"></div>
-            <div class="insight-body">
-                <div class="insight-icon"><i class="fas fa-magnifying-glass"></i></div>
-                <h3>Understand Before You Act</h3>
-                <p>
-                    Legal decisions are stronger when the facts, documents, risks and available
-                    remedies are assessed before action is taken.
-                </p>
-                <a href="#contact" class="insight-link">Discuss a matter <i class="fas fa-arrow-right"></i></a>
-            </div>
-        </article>
-
-        <article class="insight-card reveal-up delay-2">
-            <div class="insight-top"></div>
-            <div class="insight-body">
-                <div class="insight-icon"><i class="fas fa-shield-halved"></i></div>
-                <h3>Protect What Matters</h3>
-                <p>
-                    Contracts, property, businesses and personal interests all benefit from
-                    proactive legal review rather than waiting for disputes to escalate.
-                </p>
-                <a href="#contact" class="insight-link">Seek legal guidance <i class="fas fa-arrow-right"></i></a>
-            </div>
-        </article>
-
-        <article class="insight-card reveal-up delay-3">
-            <div class="insight-top"></div>
-            <div class="insight-body">
-                <div class="insight-icon"><i class="fas fa-route"></i></div>
-                <h3>Choose the Right Path</h3>
-                <p>
-                    Negotiation, mediation, documentation or litigation may each serve different
-                    objectives. The right route depends on the facts and desired outcome.
-                </p>
-                <a href="#contact" class="insight-link">Explore your options <i class="fas fa-arrow-right"></i></a>
-            </div>
-        </article>
-    </div>
-</section>
-
-<!-- ================= FAQ ================= -->
-<section class="section faq-section" id="faq">
-    <h2 class="section-title">Frequently Asked Questions</h2>
-    <div class="faq-wrap">
-        <div class="faq-item">
-            <button class="faq-question">
-                <span>How do I schedule a consultation?</span>
-                <i class="fas fa-plus"></i>
-            </button>
-            <div class="faq-answer"><div>
-                You can use the enquiry form on this website or contact Satva Legal directly
-                using the details provided in the Contact section.
-            </div></div>
-        </div>
-
-        <div class="faq-item">
-            <button class="faq-question">
-                <span>What should I bring to an initial consultation?</span>
-                <i class="fas fa-plus"></i>
-            </button>
-            <div class="faq-answer"><div>
-                Bring relevant notices, agreements, identification documents, correspondence,
-                court papers and any other records connected with your matter. Clear documentation
-                can help the legal team understand the issue more efficiently.
-            </div></div>
-        </div>
-
-        <div class="faq-item">
-            <button class="faq-question">
-                <span>Can I contact Satva Legal about a matter not listed under Practice Areas?</span>
-                <i class="fas fa-plus"></i>
-            </button>
-            <div class="faq-answer"><div>
-                Yes. If you are unsure which practice area applies, use the enquiry form and
-                briefly describe your matter. The team can advise you on the appropriate next step.
-            </div></div>
-        </div>
-
-        <div class="faq-item">
-            <button class="faq-question">
-                <span>Is my enquiry confidential?</span>
-                <i class="fas fa-plus"></i>
-            </button>
-            <div class="faq-answer"><div>
-                Enquiries should contain only information necessary to explain the issue at a
-                high level. Avoid submitting highly sensitive documents through a public web form
-                unless specifically requested through an appropriate secure channel.
-            </div></div>
-        </div>
-    </div>
-</section>
-
-<!-- ================= FINAL CTA ================= -->
-<section class="cta-section">
-    <div class="cta-box reveal-up">
-        <span class="eyebrow">Start With A Conversation</span>
-        <h2>When the law matters, preparation matters.</h2>
-        <p>
-            Tell us what you are dealing with. We will help you understand the legal landscape,
-            identify the next practical step and move forward with clarity.
-        </p>
-        <a href="#contact" class="btn btn-primary">Schedule a Consultation</a>
-    </div>
-</section>
-
-
-    <!-- Contact Section -->
-    <section class="section" id="contact">
-        <h2 class="section-title">Connect With Us</h2>
-        <div class="contact-grid">
-            <div class="contact-info">
-                <h3>Let's Discuss Your Case</h3>
-                <p style="margin-bottom: 2rem; color: #4a5568;">Reach out to arrange a confidential diagnostic
-                    evaluation with our specialized attorneys.</p>
-
-                <div class="info-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>Satva Legal,<br>Vasam Ground Floor,<br>Balussery, Kozhikode,<br>Kerala, India, PIN -
-                        673613</span>
+                <div class="promise-card reveal-right">
+                    <div class="seal"><i class="fas fa-scale-balanced"></i></div>
+                    <h3>A commitment beyond paperwork.</h3>
+                    <p>
+                        We aim to be more than a legal service provider. Our approach is built around
+                        preparation, communication, confidentiality and long-term client confidence.
+                    </p>
                 </div>
-                <div class="info-item">
-                    <i class="fas fa-phone-alt"></i>
-                    <span>
-                        <a href="tel:+918147724990">+918147724990</a>
-                        <br>
-                        <a href="tel:+918147724990">+918590211595</a>
-                    </span>
-                </div>
-
-                <div class="info-item">
-                    <i class="fas fa-envelope"></i>
-                    <span>
-                        <a href="mailto:contact@satvalegal.in">contact@satvalegal.in</a>
-                    </span>
-                </div>
-            </div>
-
-            <div class="contact-form">
-                <form id="legalForm">
-
-                    <!-- Web3Forms Access Key -->
-                    <input type="hidden" name="access_key" value="d08480d1-8573-4850-b783-22a6148d828e">
-
-                    <!-- Email subject -->
-                    <input type="hidden" name="subject" value="New Legal Enquiry - Satva Legal">
-
-                    <!-- Spam protection -->
-                    <input type="checkbox" name="botcheck" style="display:none;">
-
-                    <div class="form-group">
-                        <label for="name">Full Name</label>
-                        <input type="text" id="name" name="name" class="form-control" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" class="form-control" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="practice">Select Practice Area</label>
-                        <select id="practice" name="practice" class="form-control" required>
-                            <option value="" disabled selected>
-                                Select a Practice Area
-                            </option>
-
-                            <option value="Corporate & Business Law">
-                                Corporate & Business Law
-                            </option>
-
-                            <option value="Civil / Criminal Litigation">
-                                Civil / Criminal Litigation
-                            </option>
-
-                            <option value="Property & Real Estate">
-                                Property & Real Estate
-                            </option>
-
-                            <option value="Intellectual Property">
-                                Intellectual Property
-                            </option>
-
-                            <option value="Other Legal Assistance">
-                                Other Legal Assistance
-                            </option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="message">Brief Case Overview</label>
-                        <textarea id="message" name="message" rows="4" class="form-control" required></textarea>
-                    </div>
-
-                    <button type="submit" class="btn" id="submitButton">
-                        Submit Request
-                    </button>
-
-                    <p id="formMessage" class="form-message"></p>
-
-                </form>
             </div>
         </div>
     </section>
+
+    <!-- ================= LEGAL INSIGHTS ================= -->
+    <section class="section insights-section" id="insights">
+        <h2 class="section-title">Legal Perspectives</h2>
+        <div class="insights-grid">
+            <article class="insight-card reveal-up delay-1">
+                <div class="insight-top"></div>
+                <div class="insight-body">
+                    <div class="insight-icon"><i class="fas fa-magnifying-glass"></i></div>
+                    <h3>Understand Before You Act</h3>
+                    <p>
+                        Legal decisions are stronger when the facts, documents, risks and available
+                        remedies are assessed before action is taken.
+                    </p>
+                    <a href="#contact" class="insight-link">Discuss a matter <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+            <article class="insight-card reveal-up delay-2">
+                <div class="insight-top"></div>
+                <div class="insight-body">
+                    <div class="insight-icon"><i class="fas fa-shield-halved"></i></div>
+                    <h3>Protect What Matters</h3>
+                    <p>
+                        Contracts, property, businesses and personal interests all benefit from
+                        proactive legal review rather than waiting for disputes to escalate.
+                    </p>
+                    <a href="#contact" class="insight-link">Seek legal guidance <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+            <article class="insight-card reveal-up delay-3">
+                <div class="insight-top"></div>
+                <div class="insight-body">
+                    <div class="insight-icon"><i class="fas fa-route"></i></div>
+                    <h3>Choose the Right Path</h3>
+                    <p>
+                        Negotiation, mediation, documentation or litigation may each serve different
+                        objectives. The right route depends on the facts and desired outcome.
+                    </p>
+                    <a href="#contact" class="insight-link">Explore your options <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- ================= FAQ ================= -->
+    <section class="section faq-section" id="faq">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <div class="faq-wrap">
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>How do I schedule a consultation?</span>
+                    <i class="fas fa-plus"></i>
+                </button>
+                <div class="faq-answer">
+                    <div>
+                        You can use the enquiry form on this website or contact Satva Legal directly
+                        using the details provided in the Contact section.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>What should I bring to an initial consultation?</span>
+                    <i class="fas fa-plus"></i>
+                </button>
+                <div class="faq-answer">
+                    <div>
+                        Bring relevant notices, agreements, identification documents, correspondence,
+                        court papers and any other records connected with your matter. Clear documentation
+                        can help the legal team understand the issue more efficiently.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Can I contact Satva Legal about a matter not listed under Practice Areas?</span>
+                    <i class="fas fa-plus"></i>
+                </button>
+                <div class="faq-answer">
+                    <div>
+                        Yes. If you are unsure which practice area applies, use the enquiry form and
+                        briefly describe your matter. The team can advise you on the appropriate next step.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Is my enquiry confidential?</span>
+                    <i class="fas fa-plus"></i>
+                </button>
+                <div class="faq-answer">
+                    <div>
+                        Enquiries should contain only information necessary to explain the issue at a
+                        high level. Avoid submitting highly sensitive documents through a public web form
+                        unless specifically requested through an appropriate secure channel.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FINAL CTA ================= -->
+    <section class="cta-section">
+        <div class="cta-box reveal-up">
+            <span class="eyebrow">Start With A Conversation</span>
+            <h2>When the law matters, preparation matters.</h2>
+            <p>
+                Tell us what you are dealing with. We will help you understand the legal landscape,
+                identify the next practical step and move forward with clarity.
+            </p>
+            <a href="#contact" class="btn btn-primary">Schedule a Consultation</a>
+        </div>
+    </section>
+
+
+    <!-- Contact Section -->
+    <section class="section" id="contact" style="
+        position:relative;
+        overflow:hidden;
+        background:#0b1930;
+        color:#ffffff;
+        max-width:none;
+        width:100%;
+        padding:6rem 2rem;
+    ">
+
+        <!-- Vanta background -->
+        <div id="contact-vanta" style="
+            position:absolute;
+            inset:0;
+            z-index:0;
+            pointer-events:none;
+        ">
+        </div>
+
+        <!-- Contact content -->
+        <div style="
+        position:relative;
+        z-index:2;
+        max-width:1200px;
+        margin:0 auto;
+    ">
+
+            <h2 class="section-title" style="
+                color:#ffffff;
+                position:relative;
+                z-index:2;
+            ">
+                Connect With Us
+            </h2>
+
+            <div class="contact-grid">
+
+                <!-- Contact Information -->
+                <div class="contact-info" style="color:#ffffff;">
+
+                    <h3 style="color:#ffffff;">
+                        Let's Discuss Your Case
+                    </h3>
+
+                    <p style="
+                    margin-bottom:2rem;
+                    color:#d8dee8;
+                ">
+                        Reach out to arrange a confidential diagnostic
+                        evaluation with our specialized attorneys.
+                    </p>
+
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt" style="color:#c9aa78;"></i>
+
+                        <span style="color:#ffffff;">
+                            <strong style="color:#e7cf9e;">SATVA LEGAL</strong><br>
+                            Vasam Ground Floor<br>
+                            Balussery, Kozhikode<br>
+                            Kerala, India - <strong style="color:#e7cf9e;">673613</strong>
+                        </span>
+                    </div>
+
+                    <div class="info-item">
+                        <i class="fas fa-phone-alt" style="color:#c9aa78;"></i>
+
+                        <span>
+                            <a href="tel:+918147724990" style="color:#ffffff;">
+                                +918590211595
+                            </a>
+                            <br>
+
+                            <a href="tel:+918590211595" style="color:#ffffff;">
+                                +918147724990
+                            </a>
+                        </span>
+                    </div>
+
+                    <div class="info-item">
+                        <i class="fas fa-envelope" style="color:#c9aa78;"></i>
+
+                        <span>
+                            <a href="mailto:contact@satvalegal.in" style="color:#ffffff;">
+                                contact@satvalegal.in
+                            </a>
+                        </span>
+                    </div>
+
+                </div>
+
+
+                <!-- Contact Form -->
+                <div class="contact-form" style="
+                    position:relative;
+                    z-index:3;
+                    background:rgba(255,255,255,0.97);
+                    backdrop-filter:blur(10px);
+                    border:1px solid rgba(201,170,120,0.35);
+                    box-shadow:0 25px 70px rgba(0,0,0,0.30);
+                ">
+
+                    <form id="legalForm">
+
+                        <!-- Web3Forms Access Key -->
+                        <input type="hidden" name="access_key" value="d08480d1-8573-4850-b783-22a6148d828e">
+
+                        <!-- Email subject -->
+                        <input type="hidden" name="subject" value="New Legal Enquiry - Satva Legal">
+
+                        <!-- Spam protection -->
+                        <input type="checkbox" name="botcheck" style="display:none;">
+
+                        <div class="form-group">
+                            <label for="name">
+                                Full Name
+                            </label>
+
+                            <input type="text" id="name" name="name" class="form-control" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">
+                                Email Address
+                            </label>
+
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="practice">
+                                Select Practice Area
+                            </label>
+
+                            <select id="practice" name="practice" class="form-control" required>
+
+                                <option value="" disabled selected>
+                                    Select a Practice Area
+                                </option>
+
+                                <option value="Corporate & Business Law">
+                                    Corporate & Business Law
+                                </option>
+
+                                <option value="Civil / Criminal Litigation">
+                                    Civil / Criminal Litigation
+                                </option>
+
+                                <option value="Property & Real Estate">
+                                    Property & Real Estate
+                                </option>
+
+                                <option value="Intellectual Property">
+                                    Intellectual Property
+                                </option>
+
+                                <option value="Other Legal Assistance">
+                                    Other Legal Assistance
+                                </option>
+
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">
+                                Brief Case Overview
+                            </label>
+
+                            <textarea id="message" name="message" rows="4" class="form-control" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn" id="submitButton">
+                            Submit Request
+                        </button>
+
+                        <p id="formMessage" class="form-message">
+                        </p>
+
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Vanta.NET Background -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+
+    <script>
+        VANTA.NET({
+            el: "#contact-vanta",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            color: 0xe7cf9e,
+            points: 13.00,
+            maxDistance: 31.00,
+            spacing: 17.00
+        });
+    </script>
 
     <!-- Footer -->
     <!-- Footer -->
@@ -2816,91 +3644,91 @@ translateY(-10px)
         <i class="fab fa-whatsapp"></i>
     </a>
 
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-    /* Header state + reading progress */
-    const header = document.querySelector("header");
-    const progress = document.getElementById("scrollProgress");
-    const backTop = document.getElementById("backToTop");
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            /* Header state + reading progress */
+            const header = document.querySelector("header");
+            const progress = document.getElementById("scrollProgress");
+            const backTop = document.getElementById("backToTop");
 
-    function updateUI(){
-        const y = window.scrollY;
-        header?.classList.toggle("scrolled", y > 35);
+            function updateUI() {
+                const y = window.scrollY;
+                header?.classList.toggle("scrolled", y > 35);
 
-        const doc = document.documentElement;
-        const max = doc.scrollHeight - doc.clientHeight;
-        const pct = max > 0 ? (y / max) * 100 : 0;
-        if(progress) progress.style.width = pct + "%";
+                const doc = document.documentElement;
+                const max = doc.scrollHeight - doc.clientHeight;
+                const pct = max > 0 ? (y / max) * 100 : 0;
+                if (progress) progress.style.width = pct + "%";
 
-        backTop?.classList.toggle("visible", y > 500);
-    }
-    window.addEventListener("scroll", updateUI, {passive:true});
-    updateUI();
-
-    /* Generic reveal engine */
-    const revealItems = document.querySelectorAll(
-        ".reveal-up, .reveal-left, .reveal-right, .scale-reveal"
-    );
-
-    const revealObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if(entry.isIntersecting){
-                entry.target.classList.add("revealed");
-                observer.unobserve(entry.target);
+                backTop?.classList.toggle("visible", y > 500);
             }
-        });
-    }, {threshold:.14, rootMargin:"0px 0px -40px 0px"});
+            window.addEventListener("scroll", updateUI, { passive: true });
+            updateUI();
 
-    revealItems.forEach(el => revealObserver.observe(el));
+            /* Generic reveal engine */
+            const revealItems = document.querySelectorAll(
+                ".reveal-up, .reveal-left, .reveal-right, .scale-reveal"
+            );
 
-    /* FAQ accordion */
-    document.querySelectorAll(".faq-question").forEach(button => {
-        button.addEventListener("click", () => {
-            const item = button.closest(".faq-item");
-            document.querySelectorAll(".faq-item.open").forEach(openItem => {
-                if(openItem !== item) openItem.classList.remove("open");
+            const revealObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("revealed");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: .14, rootMargin: "0px 0px -40px 0px" });
+
+            revealItems.forEach(el => revealObserver.observe(el));
+
+            /* FAQ accordion */
+            document.querySelectorAll(".faq-question").forEach(button => {
+                button.addEventListener("click", () => {
+                    const item = button.closest(".faq-item");
+                    document.querySelectorAll(".faq-item.open").forEach(openItem => {
+                        if (openItem !== item) openItem.classList.remove("open");
+                    });
+                    item.classList.toggle("open");
+                });
             });
-            item.classList.toggle("open");
-        });
-    });
 
-    /* Active navigation based on visible sections */
-    const navAnchors = [...document.querySelectorAll(".nav-links a[href^='#']")];
-    const sectionMap = navAnchors
-        .map(a => document.querySelector(a.getAttribute("href")))
-        .filter(Boolean);
+            /* Active navigation based on visible sections */
+            const navAnchors = [...document.querySelectorAll(".nav-links a[href^='#']")];
+            const sectionMap = navAnchors
+                .map(a => document.querySelector(a.getAttribute("href")))
+                .filter(Boolean);
 
-    const navObserver = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if(entry.isIntersecting){
-                navAnchors.forEach(a => a.classList.remove("active"));
-                const active = navAnchors.find(
-                    a => a.getAttribute("href") === "#" + entry.target.id
-                );
-                active?.classList.add("active");
+            const navObserver = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        navAnchors.forEach(a => a.classList.remove("active"));
+                        const active = navAnchors.find(
+                            a => a.getAttribute("href") === "#" + entry.target.id
+                        );
+                        active?.classList.add("active");
+                    }
+                });
+            }, { rootMargin: "-35% 0px -55% 0px", threshold: 0 });
+
+            sectionMap.forEach(section => navObserver.observe(section));
+
+            /* Subtle cursor glow on desktop */
+            const glow = document.getElementById("cursorGlow");
+            if (glow && window.matchMedia("(pointer:fine)").matches) {
+                window.addEventListener("pointermove", e => {
+                    glow.style.left = e.clientX + "px";
+                    glow.style.top = e.clientY + "px";
+                }, { passive: true });
             }
+
+            /* Close FAQ with Escape */
+            document.addEventListener("keydown", e => {
+                if (e.key === "Escape") {
+                    document.querySelectorAll(".faq-item.open").forEach(i => i.classList.remove("open"));
+                }
+            });
         });
-    }, {rootMargin:"-35% 0px -55% 0px", threshold:0});
-
-    sectionMap.forEach(section => navObserver.observe(section));
-
-    /* Subtle cursor glow on desktop */
-    const glow = document.getElementById("cursorGlow");
-    if(glow && window.matchMedia("(pointer:fine)").matches){
-        window.addEventListener("pointermove", e => {
-            glow.style.left = e.clientX + "px";
-            glow.style.top = e.clientY + "px";
-        }, {passive:true});
-    }
-
-    /* Close FAQ with Escape */
-    document.addEventListener("keydown", e => {
-        if(e.key === "Escape"){
-            document.querySelectorAll(".faq-item.open").forEach(i => i.classList.remove("open"));
-        }
-    });
-});
-</script>
+    </script>
 
 </body>
 
